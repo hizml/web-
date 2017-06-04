@@ -1,0 +1,74 @@
+@charset "utf-8";
+/* CSS Document */
+/*banner*/
+.banner{ height:500px; text-align:center; background:url(../images/banner-bg_02.jpg);}
+.b-bar{ height:40px; background:#e6e6e6;}
+.b-bar li{ float:left; font-size:16px; padding-left:15px; background:url(../images/li-bg_06.jpg) no-repeat left center; width:395px; line-height:40px; }
+.b-bar .gogo{ width:363px;}
+.b-bar li a{ color:#000;}
+.b-bar li a:hover{color:#2277da;}
+/*main*/
+.m-top{ padding:40px 0; border-bottom:1px solid #f9f9f9; height:324px;}
+.m-top .m-top-0{ width:183px; height:133px; border:1px solid #cbcbcb; text-align:center; padding-top:109px; display:block; background:url(../images/img559e276e56983.png) no-repeat  center 26px; margin:0 7.5px; float:left;}
+.m-top .m-top-0:hover{background:url(../images/img559e2771a51c1.png) no-repeat  center 26px; }
+.m-top .m-top-0 h2{font-size:20px; line-height:33px; height:33px; font-weight:normal; color:#000;}
+.m-top .m-top-0 h3{ font-size:14px; line-height:28px; height:28px;color:#a5a5a7;font-weight:normal;}
+.m-top .m-top-0 p{ font-size:20px;color:#323433; line-height:70px; }
+.m-top .m-top-0 p span{ font-size:38px; color:#f57631;}
+.m-top .m-top-0 p sup{ font-size:22px;color:#f57631; }
+.m-top .m-top-1{background:url(../images/img559e27ae2c081.png) no-repeat  center 26px;}
+.m-top .m-top-1:hover{ background:url(../images/img559e27ba2178b.png) no-repeat  center 26px;}
+.m-top .m-top-2{background:url(../images/img559e281bbf193.png) no-repeat  center 26px;}
+.m-top .m-top-2:hover{ background:url(../images/img559e281da8fef.png) no-repeat  center 26px;}
+.m-top .m-top-3{background:url(../images/img559e286f7cdee.png) no-repeat  center 26px;}
+.m-top .m-top-3:hover{ background:url(../images/img559e2874df5af.png) no-repeat  center 26px;}
+.m-top .m-top-4{background:url(../images/img55b6167a7ed33.png) no-repeat  center 26px;}
+.m-top .m-top-4:hover{ background:url(../images/img55b61680ec7c8.png) no-repeat  center 26px;}
+.m-top .m-top-5{background:url(../images/img55bb2e9d075fe.png) no-repeat  center 26px;}
+.m-top .m-top-5:hover{ background:url(../images/img55bb2ea304acb.png) no-repeat  center 26px;}
+/*projects*/
+.projects{ margin:50px auto; text-align:center; }
+.projects h3{ font-size:22px; color:#1b343b; margin-bottom:33px; font-weight:normal; text-align:left;}
+.projects .pro-nav{ text-align:center;display:inline-block; *display:inline; *zoom:1;}
+.projects .pro-nav li{ float:left; line-height:34px; font-size:20px; height:34px; }
+.projects .pro-nav li a{ color:#b2a8a6; display:block;  height:34px;  margin:0 12px; padding:0 10px;}
+.projects .pro-nav li a:hover { border-bottom:2px solid #0f79cd; color:#0f79cd; }
+.projects .pro-nav .active{ border-bottom:2px solid #0f79cd; color:#0f79cd; }
+/*pro-game*/
+.pro-game{ padding-top:44px;}
+.pro-game li img{height:131px;}
+.pro-game a{ display:block;  height:196px;}
+.pro-game span { line-height:32px; height:32px; padding-top:9px; color:#272727; font-size:18px; text-align:center; display:block;}
+.pro-game p { line-height:24px; height:24px; color:#b4b1ac; font-size:16px; text-align:center;}
+.pro-game li{ display:inline-block;width:196px; *display:inline; *zoom:1;}
+/*news*/
+.news{ height:310px; background:#fafbfd;}
+.news .new1{ width:350px; float:left; margin-right:66px;}
+.news .new1 h2{ font-size:22px;color:#25303d; line-height:74px; height:74px; font-weight:normal; padding-top:7px; float:left;}
+.news .new1 p{ line-height:66px; height:66px; padding-top:15px; float:right;}
+.news .new1 p a{ color:#2277da;}
+.news .new1 li{ line-height:40px; font-size:14px; background:url(../images/li-bg_06.jpg) no-repeat left center;width:350px;}
+.news .new1 li span { float:right;}
+.news .new1 li a{ color:#000; padding-left:15px; display:block;}
+.news .new1 li a:hover{color:#2277da;}
+.news .new1 .new-text{ height:81px;}
+.news .news-r{ margin-right:16px;}
+.news .news-r img{ width:336px; height:106x; padding:4px 0;}
+
+.footer-bar{ height:73px; line-height:73px;text-align:center;}
+.footer-bar span{  margin-right:15px; font-size:16px;} 
+.footer-bar a{ display:inline-block; width:96px; height:33px; line-height:33px; background:#0071cf; font-size:14px; color:#fff;}
+.footer-bar a:hover{ color:#fff;}
+.tencent-mov{ height:320px; background:url(../images/foot_05.jpg) no-repeat top center #0774d1; text-align:center; }
+.tencent-mov h5{ font-size:32px; color:#fff; line-height:40px; height:40px; padding-top:68px;font-weight:normal;}
+.tencent-mov p{ line-height:24px; height:23px; font-size:14px; color:#fff;}
+
+
+
+
+
+
+
+
+
+

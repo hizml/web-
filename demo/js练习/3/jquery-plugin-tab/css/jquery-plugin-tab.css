@@ -1,0 +1,14 @@
+@charset "utf-8";
+/* CSS Document */
+*{ margin:0 auto;}
+a{ text-decoration:none;}
+li{ list-style:none;}
+.tab{ width:450px;}
+.option li{ float:left; border:1px solid #000000; }
+.option li a{ display:block; width:80px; height:40px; line-height:30px;}
+
+.option .active a{ background:#000000; color:#fff;}
+.content{ clear:both;}
+.content li{ width:408px; height:300px; border:1px solid #000000;}
+.con{ display:none;}
+

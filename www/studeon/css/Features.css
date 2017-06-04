@@ -1,0 +1,49 @@
+@charset "utf-8";
+/* CSS Document */
+/*main*/
+.main{ padding-top:55px;}
+.main-top{ padding:29px 0 47px 0;}
+.main-1{ width:360px; height:128px; background:url(../images/ser-bg.png) no-repeat; padding:0 20px 20px 0; float:left;}
+.main-top .pic{ width:67px; height:123px; float:left; background: url(../images/s-icons.png) no-repeat 19px 43px #ed5844; }
+.main-1 .m-1-text{ padding:12px 0 0 24px; float:left; width:262px;}
+.main-1 .m-1-text h2{ font-size:16px; font-weight:bolder; line-height:36px; color:#555152;}
+.main-1 .m-1-text p{ font-size:14px; line-height:20px; color:#9c9c9c;}
+.main-top .main-2 .pic{background-position:-69px 43px;}
+.main .main-3 .pic{background-position:-142px 43px;}
+.main .main-4 .pic{background-position: 22px -75px;}
+.main .main-5 .pic{background-position: -64px -73px;}
+.main .main-6 .pic{background-position:-140px -70px;}
+
+.main-top{ height:270px;}
+.main>h2{ font-size:30px;color:#323232; text-align:center; line-height:86px; height:86px;}
+
+.main ul{ height:470px; margin-bottom:23px;}
+.main li{ float:left; width:380px; height:207px; margin-bottom:28px; margin-top:11px; text-align:center; }
+.main li h4{ line-height:39px; height:39px; font-size:18px; color:#333333; margin:14px 22px 0 22px;}
+.main li p{ font-size:14px; color:#909090; line-height:23px;margin:0 22px; }
+.main-pic{ width:80px; height:80px; margin:0 auto; background:url(../images/img-sprite.png) no-repeat -11px -11px;; }
+.main .phone img{ width:350px; height:207px; text-align:center;}
+.main li .main-pic2{ background-position:-112px -11px;}
+.main li .main-pic3{ background-position:-212px -11px;}
+.main li .main-pic4{ background-position:-312px -11px;}
+.main li .main-pic5{ background-position:-413px -11px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

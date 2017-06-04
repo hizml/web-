@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+.box{ width:200px; height:200px; background:#666; margin-bottom:10px;}
+</style>
+</head>
+
+<body>
+<script>
+for(var i=0;i<10;i++){
+	var oDiv=document.createElement("div");//创建一个div标签，oDiv是唯一的，不能通过复制本语句创建多个与本语句相同的标签，唯一性
+	oDiv.className="box";//给div一个className；
+	document.body.appendChild(oDiv);//在body中插入创建好的oDiv对象（div标签）
+}
+
+
+
+
+</script>
+</body>
+</html>

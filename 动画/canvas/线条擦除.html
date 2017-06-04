@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>canvas</title>
+    <script>
+        window.onload=function(){
+            var cvs=document.getElementById('cvs');
+            var ctx=cvs.getContext('2d');
+            //第一条线
+            ctx.beginPath();    //开始路径
+//            ctx.moveTo(100,100);    //起点
+            ctx.lineTo(400,400); //终点
+            ctx.lineTo(0,400); //终点
+            ctx.lineTo(0,0); //终点
+            ctx.strokeStyle='#EA2000';
+            ctx.lineWidth=6;
+            ctx.closePath();    //闭合路径
+            ctx.stroke();       //描边渲染
+
+            ctx.clearRect(0,20,50,50);  //擦除 x y width height
+//            //第二条线
+//            ctx.beginPath();    //开始路径
+//            ctx.moveTo(400,400);    //起点
+//            ctx.lineTo(0,400); //终点
+//            ctx.strokeStyle='#38AEF5';
+//            ctx.lineWidth=5;
+//            ctx.closePath();    //闭合路径
+//            ctx.stroke();       //描边渲染
+//            //第三条线
+//            ctx.beginPath();    //开始路径
+//            ctx.moveTo(0,400);    //起点
+//            ctx.lineTo(0,0); //终点
+//            ctx.strokeStyle='#5CDA27';
+//            ctx.lineWidth=8;
+//            ctx.closePath();    //闭合路径
+//            ctx.stroke();       //描边渲染
+
+        }
+    </script>
+</head>
+<body>
+<canvas id="cvs" width="500" height="500"></canvas>
+</body>
+</html>

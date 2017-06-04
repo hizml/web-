@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>二级菜单</title>
+<style>
+*{ margin:0; padding:0;}
+a{ text-decoration:none;}
+li{ list-style:none;}
+body{ background:#666; font-family:"微软雅黑"; font-size:16px;}
+.nav{ height:40px; line-height:40px; background:#0C99E8;}
+.inner{height:40px; line-height:40px; width:1020px; margin:0 auto;}
+.nav li{ float:left;position:relative; }
+.nav .active::after{ content:""; position:absolute; left:93px; top:18px; border:5px solid transparent; border-top-color:#fff;}
+.nav .active a{ padding-right:30px;}
+.nav li:hover{ background:#C45C5E;}
+.nav li a{ display:block; height:40px; line-height:40px; color:#fff; padding: 0 20px;}
+.nav .subnav{ background:#0C99E8;padding-top:1px; display:none;}
+.nav .subnav li{ float:none;}
+</style>	
+</head>
+
+<body>
+<script src="../jq/jquery-1.11.3.min.js"></script>
+<script>
+$(function(){
+	var aLi=$("li")
+	for(var i=0;i<aLi.length;i++){
+		var subm=aLi.eq(i).children("ul").get(0);
+		if(subm){
+			aLi.eq(i).addClass("active");
+			$(subm).addClass("subnav");
+		}
+	}
+	aLi.hover(
+		function(){
+			$(this).children(".subnav").stop().slideDown();
+		},
+		function(){
+			$(this).children(".subnav").stop().slideUp();
+		}
+	)
+})
+/*window.onload=function(){
+var oNav=document.getElementById("nav");
+var aLi=oNav.getElementsByTagName("li");
+
+	for( var i=0;i<aLi.length;i++){		//循环找li里边的带ul的标签 即找二级菜单
+		var subn=aLi[i].getElementsByTagName("ul")[0];
+		if(subn){					//如果找到 就把二级菜单的classname给二级菜单 把小三角给有二级菜单的li
+			aLi[i].className="active";
+			subn.className="subnav";
+		}
+		aLi[i].onmouseover=function(){	//鼠标移入
+			var subMnu=this.children[1];	//找现在鼠标悬浮的li的第二个节点、有木有
+			if(subMnu){						//如果找到 就给他的display为块 容错；
+				subMnu.style.display="block";
+			}								//没有  就不管他
+		};
+		aLi[i].onmouseout=function(){		//同上 鼠标移出事件 
+			var subMnu=this.children[1];
+			if(subMnu){
+				subMnu.style.display="none";
+			}
+		};
+	}
+}*/
+</script>
+<div class="nav" id="nav">
+	<div class="inner">
+		<ul>
+			<li><a href="javascritp:;">首页</a></li>
+			
+			<li>
+				<a href="javascritp:;">新闻动态</a>
+					<ul>
+						<li><a href="javascritp:;">行业动态</a></li>
+						<li><a href="javascritp:;">公司动态</a></li>
+					</ul>
+			</li>
+			
+			<li>
+				<a href="javascritp:;">产品展示</a>
+					<ul>
+						<li><a href="javascritp:;">产品1</a></li>
+						<li><a href="javascritp:;">产品2</a></li>
+						<li><a href="javascritp:;">产品3</a></li>
+						<li><a href="javascritp:;">产品4</a></li>
+						<li><a href="javascritp:;">产品5</a></li>
+						<li><a href="javascritp:;">产品6</a></li>
+					</ul>
+			</li>
+			
+			<li><a href="javascritp:;">联系我们</a></li>
+			<li><a href="javascritp:;">关于我们</a></li>
+		</ul>
+	</div>
+</div>
+</body>
+</html>

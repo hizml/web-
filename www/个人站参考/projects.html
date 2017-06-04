@@ -1,0 +1,170 @@
+
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  
+  <title>Arne Meister Contemporary Art – Projects</title>
+  <meta charset="utf-8" />
+  <meta name="description" content="Arne Meister makes Contemporary Art." />
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1" />
+
+  <!--[if lt IE 9]>
+    <meta http-equiv="refresh" content="0; URL=ie.html">
+  <![ENDIF]-->
+
+  <link rel="stylesheet" href="styles/styles.css" />
+  <script src="js/jquery-1.9.1.js"></script>
+  <link type="text/css" rel="stylesheet" href="styles/css.css"/>
+
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+  
+
+</head>
+
+<body>
+<div id="content_container">
+        <a id="p1" class="project_titel" href="http://www.arnemeister.de/projects/ein-aus">ein / aus   Sicht    Ich<br/></a>
+          <a id="p2" class="project_titel" href="http://www.arnemeister.de/projects/tanzcafe">Tanzcafé<br/></a>
+          <a id="p3" class="project_titel" href="http://www.arnemeister.de/projects/robotron">Funktion: aus<br/></a>
+          <a id="p4" class="project_titel" href="http://www.arnemeister.de/projects/ecken">Ecken<br/></a>
+          <a id="p5" class="project_titel" href="http://www.arnemeister.de/projects/tod-einer-kreatur">Tod einer Kreatur<br/></a>
+        <div id="abstand"><div>
+</div>
+
+<div id="container_navibar">
+	<a href="index.html" id="link_home" class="navibar_link">Arne Meister</a>
+	<a href="projects.html" id="link_projects" class="navibar_link">Projects</a>
+	<a href="contact.html" id="link_contact" class="navibar_link">Contact</a>
+	<a href="index.html"><div id="signet"></div></a>
+</div>
+
+
+
+
+<script type="text/javascript">
+
+var seiten = '0';
+
+//Seitenunterstreichung////////////////////////////////////////
+  $("#link_projects").css('border-bottom-width','2px');
+  $("#link_projects").css('border-bottom-style','solid');
+  $("#link_projects").css('border-color','#000');
+
+//Titel einblenden////////////////////////////////////////
+    
+    $('#p1').delay(150*1).animate({opacity:'1'}, 800, 'swing');
+    
+    if (seiten.match('ein / aus   Sicht    Ich')) {
+      $("#p1").css('background-image','url(http://www.arnemeister.de/assets/images/line.svg)');
+
+      $("#p1").mouseover(function(){
+        $("#p1").css('background-image','url(http://www.arnemeister.de/assets/images/line_hover.svg)');
+      });
+      $("#p1").mouseout(function(){
+        $("#p1").css('background-image','url(http://www.arnemeister.de/assets/images/line.svg)');
+      });
+    }else{
+      $("#p1").mouseover(function(){
+        $("#p1").css('background-image','url(http://www.arnemeister.de/assets/images/line_hover.svg)');
+      });
+      $("#p1").mouseout(function(){
+        $("#p1").css('background-image','none');
+      });
+    }
+      
+    $('#p2').delay(150*2).animate({opacity:'1'}, 800, 'swing');
+    
+    if (seiten.match('Tanzcafé')) {
+      $("#p2").css('background-image','url(http://www.arnemeister.de/assets/images/line.svg)');
+
+      $("#p2").mouseover(function(){
+        $("#p2").css('background-image','url(http://www.arnemeister.de/assets/images/line_hover.svg)');
+      });
+      $("#p2").mouseout(function(){
+        $("#p2").css('background-image','url(http://www.arnemeister.de/assets/images/line.svg)');
+
+      });
+    }else{
+      $("#p2").mouseover(function(){
+        $("#p2").css('background-image','url(http://www.arnemeister.de/assets/images/line_hover.svg)');
+      });
+      $("#p2").mouseout(function(){
+        $("#p2").css('background-image','none');
+      });
+    }
+      
+    $('#p3').delay(150*3).animate({opacity:'1'}, 800, 'swing');
+    
+    if (seiten.match('Funktion: aus')) {
+      $("#p3").css('background-image','url(http://www.arnemeister.de/assets/images/line.svg)');
+
+      $("#p3").mouseover(function(){
+        $("#p3").css('background-image','url(http://www.arnemeister.de/assets/images/line_hover.svg)');
+      });
+      $("#p3").mouseout(function(){
+        $("#p3").css('background-image','url(http://www.arnemeister.de/assets/images/line.svg)');
+      });
+    }else{
+      $("#p3").mouseover(function(){
+        $("#p3").css('background-image','url(http://www.arnemeister.de/assets/images/line_hover.svg)');
+      });
+      $("#p3").mouseout(function(){
+        $("#p3").css('background-image','none');
+      });
+    }
+      
+    $('#p4').delay(150*4).animate({opacity:'1'}, 800, 'swing');
+    
+    if (seiten.match('Ecken')) {
+      $("#p4").css('background-image','url(http://www.arnemeister.de/assets/images/line.svg)');
+
+      $("#p4").mouseover(function(){
+        $("#p4").css('background-image','url(http://www.arnemeister.de/assets/images/line_hover.svg)');
+      });
+      $("#p4").mouseout(function(){
+        $("#p4").css('background-image','url(http://www.arnemeister.de/assets/images/line.svg)');
+      });
+    }else{
+      $("#p4").mouseover(function(){
+        $("#p4").css('background-image','url(http://www.arnemeister.de/assets/images/line_hover.svg)');
+      });
+      $("#p4").mouseout(function(){
+        $("#p4").css('background-image','none');
+      });
+    }
+      
+    $('#p5').delay(150*5).animate({opacity:'1'}, 800, 'swing');
+    
+    if (seiten.match('Tod einer Kreatur')) {
+      $("#p5").css('background-image','url(http://www.arnemeister.de/assets/images/line.svg)');
+
+      $("#p5").mouseover(function(){
+        $("#p5").css('background-image','url(http://www.arnemeister.de/assets/images/line_hover.svg)');
+      });
+      $("#p5").mouseout(function(){
+        $("#p5").css('background-image','url(http://www.arnemeister.de/assets/images/line.svg)');
+      });
+    }else{
+      $("#p5").mouseover(function(){
+        $("#p5").css('background-image','url(http://www.arnemeister.de/assets/images/line_hover.svg)');
+      });
+      $("#p5").mouseout(function(){
+        $("#p5").css('background-image','none');
+      });
+    }
+      
+//...////////////////////////////////////////
+  function pos(){
+    $("#content_container").css('left',window.innerWidth/2-document.getElementById('content_container').offsetWidth/2);
+  }
+  pos();
+  window.onresize = pos;
+
+</script>
+
+
+
+

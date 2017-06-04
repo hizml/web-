@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,inital-scale=1.0,user-scalable=0,minmum-scale=1.0,maximum-scale=1.0">
+    <title>tech</title>
+    <style>
+		body, ul, ol, li, dl, dd, h1, h2, h3, h4, h5, h6, p, textarea, input ,button,i,s{ margin: 0; padding: 0; }
+		header,section,article,aside,footer{display: block;}
+		li { list-style: none; }
+		a,s{ text-decoration: none;color: #666; }
+		s{ text-decoration: none; }
+		input, img,button  { border: none; }
+		input, button { outline: none;}
+		i,em{ font-style: normal; }
+		textarea{ border:none; resize:none; outline:none;}
+		body { font: 12px/1.5 arial,'Microsoft YaHei', tahoma,  Hiragino Sans GB, \\5b8b\4f53, sans-serif; color: #666; background-color: #FFFFFF; -webkit-font-smoothing: antialiased;}        
+	    body{ background: url("images/body-bg.jpg") no-repeat #0d1424 center top ; background-size:cover;}
+	    .warp{width: 980px; margin: 0 auto}
+	    header{padding: 34px 0 40px;}
+	    nav{background: #888888; border-radius: 7px; box-shadow: 0 10px 10px 0 rgba(0,0,0,.5);position: relative;}
+	    nav .menu{display: none; transition: all .3s;float: left;}
+	    nav .menu:hover{transform: rotate(180deg);}
+	    nav::after{content: '';display: block;clear:both; visibility:hidden;}
+	    nav ul{float: left; padding-left: 27px;height: 40px;}
+	    nav li{float: left; padding-right: 30px;line-height: 40px;}
+	    nav li a{font-size: 14px; color: #fff; text-shadow: 2px 3px 3px rgba(0,0,0,.5);}
+	    nav form{float: right; padding: 7px 10px 0 0;}
+	    nav input{ width: 120px; padding: 0 10px; height: 27px; line-height: 27px; border-radius: 7px; color: #ccc;transition: all .6s ease; }
+    	section{padding-top: 30px;}
+    	section::after{content: '';display: block;clear:both; visibility:hidden;}
+    	section article{float:left;width: 600px; padding: 30px 35px 40px; background-color: #fff; border-radius: 7px; box-shadow: 6px 10px 10px 0 rgba(0,0,0,.3);}
+    	section article h3{font-size: 24px; font-family: "黑体"; color: #050000; line-height: 31px; }
+    	section article time{ line-height: 29px; color: #050000; font-size: 14px; font-weight: 600;}
+    	section article .banner{padding-top: 7px;}
+    	section article .banner img{display: block; width: 100%; }
+    	section article p{color: #63676a;   line-height: 21px; padding-top: 25px; padding-bottom: 8px; font-size: 14px;}
+    	section article video{width: 100%;display: block;}
+    	section aside{ float: right; width: 200px;}
+    	section aside .aside{padding: 0 20px; margin-bottom: 27px; background-color: #fff;border-radius: 7px;box-shadow: 6px 10px 10px 0 rgba(0,0,0,.3); }
+    	section aside ul{padding-bottom:  10px; }
+    	section aside h3{font-weight: bold; font-size: 15px; color: #080135; line-height: 25px; padding: 5px 0 6px;}
+    	section aside li{border-top: 1px solid #ededed; line-height: 30px; font-size: 14px; font-weight: 500;}
+    	section aside li a{color: #040203; }
+    	footer{text-align: center; padding: 16px 0 39px;  font-size: 14px; }
+    	footer p{line-height: 21px; color: #fff; opacity: .4;}
+		@media screen and (max-width: 980px){
+			.warp{width: 96%}
+			section article{ width: 61%;padding: 30px 3.5% 40px; }
+			section article .banner{width: 100%}
+			section aside{width: 23%;}
+			section aside .aside{padding: 0 8%;}
+		}
+		@media screen and (max-width:640px){
+			section article{float: none;width: auto;}
+			section aside{float: none;width: auto;padding-top: 27px; }
+			section aside .aside{padding: 0 3%;}
+			nav form{position: absolute; top: -44px;right: -10px;}
+			nav form input{width: 65px;}
+			nav form input:focus{width: 120px;}
+
+			nav ul{display: none;}
+			nav .menu{display: block;height: 40px;line-height: 52px;margin-left: 10px;}
+		}
+		
+    </style>
+</head>
+<body>
+<div class="warp">
+    <header><a href="#none"><img src="images/logo.png" /></a></header>
+	<nav>
+		<div class="menu" id="menu"><img src="images/menu.png"  /></div>
+		<ul>
+			<li><a href="#">home</a></li>
+			<li><a href="#">Themify</a></li>
+			<li><a href="#">IconDock</a></li>
+			<li><a href="#">N.Design</a></li>
+		</ul>
+		<form>
+			<input type="text" placeholder="Search"/>
+		</form>
+	</nav>
+	<section>      <!-- main用section代替 -->	
+		<article>
+			<h3>Just a Post Title</h3>
+			<time>May 8, 2014 in Category</time>
+			<div class="banner"><img src="images/sample-image.jpg" /></div>
+			<p>
+				Fusce ut sem est. In eu sagittis felis. In gravida arcu ut neque ornare vitae rutrum turpis vehicula. Nunc ultrices sem mollis metus rutrum non malesuada metus fermentum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque interdum rutrum quam, a pharetra est pulvinar ac. Vestibulum congue nisl magna. Ut vulputate odio id dui convallis in adipiscing libero condimentum. Nunc et pharetra enim. Praesent pharetra, neque et luctus tempor, leo sapien faucibus leo, a dignissim turpis ipsum sed libero. Sed sed luctus purus. Aliquam faucibus turpis at libero consectetur euismod. Nam nunc lectus, congue non egestas quis, condimentum ut arcu. Nulla placerat, tortor non egestas rutrum, mi turpis adipiscing dui, et mollis turpis tortor vel orci. Cras a fringilla nunc. Suspendisse volutpat, eros congue scelerisque iaculis, magna odio sodales dui, vitae vulputate elit metus ac arcu. Mauris consequat rhoncus dolor id sagittis. Cras tortor elit, aliquet quis tincidunt eget, dignissim non tortor.
+			</p>
+			<video src="media/Compress.MP4" controls poster="images/j-20-1.jpg" loop>当前浏览器不支持 video直接播放，点击这里下载视频： <a href="media/Compress.MP4">下载视频</a></video>
+			<audio src="media/music.mp3" controls autoplay loop>当前浏览器不支持 Audio直接播放，点击这里下载音频： <a href="media/music.mp3">下载视频</a></audio>				
+		</article>
+		<aside>			
+			<div class="aside">
+				<h3>Sidebar</h3>				
+				<ul>
+					<li><a href="#">WordPress (3)</a></li>
+					<li><a href="#">WordPress (3)</a></li>
+					<li><a href="#">WordPress (3)</a></li>
+				</ul>
+			</div>
+			<div class="aside">
+				<h3>Sidebar</h3>				
+			</div>		
+		</aside>
+	</section>
+	<footer>
+		<p>©北京XXXX有限公司</p>
+		<p>北京市海淀区XX路XX号</p>
+	</footer>
+</div>
+</body>
+</html>
+<script>
+	var menu = document.getElementById('menu')
+	console.log(menu)
+</script>

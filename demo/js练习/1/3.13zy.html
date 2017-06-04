@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+li{width:50px; height:30px; background:#999; margin-bottom:20px;}
+.color{ background:red;}
+.a{ background:blue;}
+</style>
+</head>
+
+<body>
+<ul>
+	<li>1</li>
+	<li>2</li>
+	<li>3</li>
+	<li>4</li>
+	<li>5</li>
+	<li>6</li>
+	<li>7</li>
+	<li>8</li>
+</ul>
+<script>
+	var aUl=document.getElementsByTagName("ul")[0];
+	var aLi=aUl.getElementsByTagName("li");
+	
+	for(var i=0; i<aLi.length;i++){                
+		if(i%2==0){
+			aLi[i].className="color";//隔行换色
+		}
+		
+		aLi[i].index=aLi[i].className;//给classname发牌照
+		
+		aLi[i].onmouseover=function(){
+			this.className="a";			//鼠标移入显示aclassName 即blue
+		}
+		aLi[i].onmouseout=function(){	//鼠标移出背景色还是原来的
+			this.className=this.index;
+		}
+	}
+</script>
+</body>
+</html>

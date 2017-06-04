@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>画板</title>
+    <style>
+        *{margin: 0;padding: 0}
+    </style>
+    <script>
+        window.onload=function(){
+            var cvs=document.getElementById('cvs');
+            var ctx=cvs.getContext('2d');
+
+            var lastX;
+            var lastY;
+
+            cvs.width=window.innerWidth-4;
+            cvs.height=window.innerHeight-4;
+
+            ctx.lineCap='round';
+//            ctx.lineJoin='round';
+            ctx.lineWidth=10;   //笔号
+            ctx.strokeStyle='red';
+
+            window.oncontextmenu=function(){       //阻止右键默认事件
+              return false;
+            };
+
+            var isUpa=0;                        //状态变量  0 鼠标抬起 绘制结束  ； 0鼠标左键  ；2鼠标右键
+
+            window.onmousedown=function(e){     //鼠标按下
+                var path='';
+                var length=0;
+                if(e.button==0){                //e.button==0 代表鼠标左键
+                    isUpa=1;
+                }else if(e.button==2){          //e.button==2 代表鼠标右键
+                    isUpa=2;
+                }
+            };
+            window.onmouseup=function(){        //鼠标抬起
+                isUpa=0;
+                lastX=lastY=undefined;          //置空
+                console.log(path);
+                console.log(length);
+            };
+            window.onmousemove=function(e){     //鼠标移动
+                if(isUpa==1){
+                    pains(e);                   //左键调用画板
+                }else if(isUpa==2){
+                    _clear(e);               //右键橡皮擦
+                }
+//                console.log(e.screenX, e.offsetX, e.clientX);
+            };
+
+//            绘制函数
+            function pains(e){
+                if(lastX==undefined){      //刚开始lastX及Y均为空
+                    lastX=e.offsetX;        //获取鼠标点击时的初始位置值
+                    lastY=e.offsetY;
+                    path='M'+lastX+','+lastY;  //开始值加入path
+                    return;
+                }
+
+                ctx.beginPath();
+                ctx.moveTo(lastX,lastY);        //开始值为初始值
+                ctx.lineTo(e.offsetX,e.offsetY);    //结束值为鼠标当前所在坐标值
+                path+='L'+e.offsetX+','+e.offsetY;
+                length+=Math.sqrt(Math.pow(e.offsetX-lastX,2)+Math.pow(e.offsetY-lastY,2));
+//              ctx.closePath();
+                ctx.stroke();           //渲染
+
+                lastX=e.offsetX;        //将上次结束时的值赋予下一个线条的开始值
+                lastY=e.offsetY;
+
+            }
+
+//            橡皮擦
+            function _clear(e){
+                var w=100;
+                var h=100;
+                var x= e.offsetX-w/2;
+                var y= e.offsetY-h/2;
+                ctx.clearRect(x,y,w,h)
+            }
+        }
+
+    </script>
+</head>
+<body>
+<canvas id="cvs" ></canvas>
+</body>
+</html>

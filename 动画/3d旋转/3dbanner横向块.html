@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3dbanner横向块</title>
+    <style>
+        *{margin: 0;padding: 0}
+        .box{width: 980px; height: 500px;position: absolute;left: 0;top: 0;right: 0;bottom: 0; margin: auto;transform-style: preserve-3d;perspective: 0px;transform: rotateX(0deg) rotateY(0deg)}
+        .item{height: 100%;width: 100%}
+        .pic{position: absolute;width: 100%;height: 100%;}
+    </style>
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script>
+        $(function(){
+            var num=0;
+            var box=$('.box');
+            var pic=5;
+            var h=box.height()/pic;
+            for(var i=0;i<4;i++){
+                $('<div class="item"></div>').appendTo(box)
+            }
+            $('.item').each(function(index,element){
+                var deg=index*90;
+                for(var i=0;i<pic;i++){
+                    var t=i*0.1;
+                    $('<div class="pic"></div>').css({'height':h,'top':i*h+'px','background-image':'url("img/'+index+'.jpg")','background-position':'0px '+(-i*h)+'px','transform':'rotateY('+deg+'deg) translateZ(490px)',"transition":"transform .5s "+t+"s"}).appendTo(this)
+                }
+            });
+
+            function run(){
+                num++;
+                $('.item').each(function(index,element){
+                    var deg=index*90-num*90;
+                    $(this).find('.pic').each(function(index,element){
+                        $(this).css({'transform':'rotateY('+deg+'deg) translateZ(490px)'})
+                    });
+                })
+            }
+
+            $(window).click(function(){
+                run()
+            });
+        })
+    </script>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>svg表</title>
+
+    <style type="text/css" rel="stylesheet">
+        *{margin: 0; padding: 0}
+        svg{margin:100px 400px;}
+    </style>
+
+</head>
+<body>
+    <svg width="600" height="600" xmlns="http://www.w3.org/2000/svg"></svg>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script type="text/javascript">
+        var $svg=$('svg');
+        var deg;
+
+        var roundCx=300;
+        var roundCy=300;
+        var roundR=150;
+
+        //圆环
+        var dom=document.createElementNS("http://www.w3.org/2000/svg","circle");
+        $(dom)
+        .attr({
+            cx:roundCx,
+            cy:roundCy,
+            r:roundR,
+            stroke:'purple',
+            'stroke-width':5,
+            'fill':'none'
+        })
+        .appendTo($svg);
+
+        //刻度
+        for(var i=0;i<60;i++){
+            deg=i*(Math.PI*2/60)-Math.PI/2;
+            dom=document.createElementNS("http://www.w3.org/2000/svg","circle");
+            $(dom)
+            .attr({
+                cx:roundCx+130*Math.cos(deg),
+                cy:roundCy+130*Math.sin(deg),
+                r:i%5===0?6:3,
+                stroke:'purple',
+                'fill':'purple'
+            })
+            .appendTo($svg)
+        }
+
+
+        //中心小点
+        dom=document.createElementNS("http://www.w3.org/2000/svg","circle");
+        $(dom).attr({
+            cx:roundCx,
+            cy:roundCy,
+            r:8,
+            stroke:'purple',
+            'fill':'purple'
+        }).appendTo($svg);
+        var dot=$('circle').last();
+
+        //绘制表针函数
+        function pointer(deg,color,width,leng){
+            dom=document.createElementNS("http://www.w3.org/2000/svg","path");
+            $(dot).before(
+            $(dom)
+            .attr({
+                'stroke':color,
+                'stroke-width':width,
+                'd':'M'+roundCx+','+roundCy+'L'+Math.floor(roundCx+(roundR-leng)*Math.sin(deg))+','+Math.floor(roundCy+(roundR-leng)*Math.cos(deg))
+            }));
+        }
+
+        //组合表
+        function surface(){
+
+            var date=new Date();
+            var s=date.getSeconds();
+            var m=date.getMinutes();
+            var h=date.getHours();
+
+            if(h>12){
+                h=h%12
+            }
+
+            $('path').remove();
+
+            //秒针
+            deg=(Math.PI)-(Math.PI/30)*s;
+            color='red';
+            width=2;
+            leng=30;
+            pointer(deg,color,width,leng);
+
+            //分针
+            deg=(Math.PI)-(Math.PI/30)*(m+s/60);
+            color='blue';
+            width=3;
+            leng=40;
+            pointer(deg,color,width,leng);
+
+            //时针
+            deg=(Math.PI)-(Math.PI/6)*(h+m/60+s/3600);
+            color='green';
+            width=5;
+            leng=70;
+            pointer(deg,color,width,leng);
+
+        }
+        surface();
+        setInterval(surface,50);
+
+    </script>
+</body>
+</html>

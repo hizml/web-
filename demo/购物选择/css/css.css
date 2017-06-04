@@ -1,0 +1,37 @@
+@charset "utf-8";
+/* CSS Document */
+*{ margin:0; padding:0;}
+a,s{ text-decoration:none;}
+li{list-style:none;}
+em{ font-style:normal;}
+button{ border:none; outline:none;}
+textarea{ border:none; resize:none; outline:none;}
+body{ font-family:"Microsoft YaHei";}
+.none{ display:none;}
+
+.box{ width:760px; border:1px solid #999; position:relative; padding:20px;}
+.pic{  position:absolute;top:20px;}
+.pic .tabList li img{width:30px; height:30px;}
+.text{ margin-left:200px;}
+.pic .tabList img{ width:180px; height:180px; float:left;}
+.pic .tabList li{ margin-right:5px; float:left; border:1px solid #fff;}
+.pic .tabList li:hover{ border-color:#be0106;}
+.pic .tabCont { margin-bottom:16px;}
+.text .text-t{ padding: 0 10px 12px}
+.text .text-t h3{ font-size:16px; font-weight:700px;}
+.text .text-t p{ font-size:14px; color:#dd2727; }
+.text .t-bg{ background-image:url(../images/bg.png); padding: 5px 10px; height:33px;}
+.text .t-bg span{color: #999; font-size: 12px;text-align: left;float: left; width: 69px; line-height:36px; height:36px;}
+.text .t-bg s{vertical-align: middle;color: #c40000;font-size: 18px;font-family: Arial;margin-bottom: -6px;display: inline-block; font-family:"微软雅黑"}
+.text .t-bg em{-webkit-font-smoothing: antialiased;vertical-align: middle;font-size: 30px;color: #c40000;font-weight: bolder; font-family: Arial;}
+.text .btn{padding:0 10px; margin-top:10px; height:35px;}
+.text .btn p{color: #999; font-size: 12px;text-align: left;float: left; width: 69px; line-height:36px; height:32px; }
+.text .btn button{float: left;background-color:#fff;white-space:nowrap;min-width:10px;padding:0 9px;text-align:center;border:2px solid #b8b7bd;color:#000;text-decoration:none;line-height: 28px; margin-right:5px;}
+.text .btn button:hover{ border:2px solid #be0106;}
+.text .num{ padding: 0 10px;margin-top: 10px;}
+.text .num p{color: #999; font-size: 12px;text-align: left;float: left; width: 69px; line-height:36px; height:31px;}
+.text .num input{padding:3px 2px 0 3px;line-height:26px;font-size:12px;margin:0;height:26px;border:1px solid #a7a6ac;width:36px;color:#666;outline:none;}
+.text .num form{display:inline-block;vertical-align: middle;}
+.text .num form button{vertical-align: middle;width: 16px;height: 14px; overflow: hidden;border: 1px solid #a7a6ab;display: block; font-family: tm-detail-font;line-height: 12px;font-size: 16px;cursor: pointer;color: #878787; background:#fff; margin-bottom:3px; }
+.text>button{ margin-left:80px; margin-top:10px;overflow:hidden;width:178px;background-color:#ffeded;border:1px solid #c40000;color:#c40000;font-family:'Microsoft Yahei';height: 38px;line-height: 38px;text-align: center;font-size: 16px; cursor:pointer;}
+

@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>速度控制（像素）</title>
+<style>
+*{margin:0; padding:0;}
+#box{ width:200px; height:200px ; background:#A86566; position:absolute;}
+</style>
+</head>
+
+<body>
+<div id="box"></div>
+</body>
+</html>
+<script src="../jq/jquery-1.11.3.min.js"></script>
+<script>
+function getstyle(obj,styleName){  //读取样式
+	return parseInt(getComputedStyle(obj,false)[styleName]);
+};
+
+function animate(obj,mode,end,speed){
+	speed = speed || 10;
+	var start=0;
+	clearInterval(obj.timer);
+	obj.timer=setInterval(function(){
+		start+=speed
+		
+		obj.style[mode]=start+"px";
+		if(start>=end){
+			clearInterval(obj.timer)
+			obj.style[mode]=end+"px";
+		};
+	},30);
+};
+var oDiv=document.getElementById("box");
+	oDiv.onclick=function(){
+		animate(oDiv,"left",1800,20)
+	}
+	
+
+</script>

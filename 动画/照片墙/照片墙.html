@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>照片墙</title>
+    <script src="../jquery-3.1.1.min.js"></script>
+    <style>
+        *{margin: 0; padding: 0}
+        body{background-color: #0f0f0f}
+        .box{width:980px; height:500px;position: absolute;left: 0;top:0; right:0;bottom: 0;margin: auto; }
+        .item{width: 196px;height: 100px;position: absolute;transition: all 1s;background-color:#fff;cursor: pointer;}
+        .pic{width: 100%; height: 100%;transition: all 1s; }
+    </style>
+    <script>
+        $(function(){
+            /*
+            * 1.插入25个div并定位
+            * 2.分别向25个div中插入不同的背景图
+            * 3.绑定点击事件并独立开关控制大小图切换
+            * */
+            var box=$('#box');
+            var isSmail=true;
+            for(var i=0; i<25; i++){      //插入div
+                var x=i%5;
+                var y=parseInt(i/5);
+                $('<div class="item"><div class="pic"></div></div>').css({'left':x*196+'px','top':y*100+'px'}).appendTo(box);
+            }
+            //---------------------------------------
+            var pic=$('.pic');
+            function smallPic(){       //25个div分别设置不同的背景图 预览图
+                $('.item').each(function(index,element){
+                    var x=index%5;
+                    var y=parseInt(index/5);
+                    var _num=Math.random()*60;
+                    $(this).css({'transform':'translate('+(x-2)*50+'px,'+(y-2)*50+'px) rotate('+(30-_num)+'deg)'})
+                });
+                pic.each(function(index,element){       //25个div显示不同的图片
+                    $(this).css({'background-image':'url(img/'+index+'.jpg)','background-size':'cover','transform':'scale(.95,.9)','background-position':'0 0'})
+                });
+            }
+            smallPic();
+
+            //---------------------------------------
+            function bigPic(i){     //25个div拼接成一张背景图  大图
+                $('.item').each(function(index,element){
+                    var x=index%5;
+                    var y=parseInt(index/5);
+                    $(this).css({'transform':'translate(0px,0px)'})
+                });
+                pic.each(function(index,element){       //25个div显示相同的图片
+                    var x=index%5;
+                    var y=parseInt(index/5);
+                    $(this).css({'background-image':'url(img/'+i+'.jpg)','background-size':'auto','background-position':x*(-196)+'px '+y*(-100)+'px','transform':'scale(1)'})
+                });
+            }
+            //---------------------------------------
+            $('.item').click(function(){
+                var index=$(this).index();
+                if(isSmail){
+                    bigPic(index);
+                }else{
+                    smallPic();
+                }
+                isSmail=!isSmail;
+            })
+        })
+    </script>
+</head>
+<body>
+    <div id="box" class="box"></div>
+</body>
+</html>

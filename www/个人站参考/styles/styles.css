@@ -1,0 +1,282 @@
+@charset "utf-8";
+/* CSS Document */
+
+html {
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0px;
+  font-family:"Avenir Next", Arial;
+  font-size: 30px;
+  line-height: 36px;
+  color:#000;
+  background-color: #fff;
+  cursor: default;
+}
+
+a{
+  text-decoration: none;
+  color: #000;
+}
+a:hover{
+  color: #555;
+}
+
+h1{
+  font-size: 118px;
+  line-height: 130px;
+  margin-bottom: -118px;
+  font-weight: 400;
+  margin: 0px;
+}
+
+a img{
+  outline: none;
+}
+
+img{
+  border: 0;
+  margin-bottom: -8px;
+  width: auto;
+  height: auto;
+}
+
+p {
+  margin: 0;
+}
+
+#text_home{
+  opacity: 0;
+}
+
+#content_container{
+  position: relative;
+  width: 1030px;
+  top: 215px;
+}
+
+#text_contact{
+  font-size: 118px;
+  line-height: 130px;
+  opacity:0;
+}
+
+.project_titel{
+  clear: left;
+  cursor: pointer;
+  font-size: 118px;
+  line-height: 130px;
+  opacity: 0;
+  background-repeat: repeat;
+}
+
+.bild_container{
+  float: left;
+  opacity: 0;
+  margin-bottom: 80px;
+}
+.bild_beschreibung_container{
+  position: absolute;
+  background-color: rgba(0,0,0,0.7);
+  opacity: 0;
+  cursor:url(images/AM_cursor.cur),pointer;
+}
+.bild_beschreibung{
+  position: relative;
+  color: #fff;
+  width: 60%;
+  margin-right: 20%;
+  margin-left: 20%;
+  text-align: center;
+  font-size: 50px;
+  line-height: 65px;
+}
+
+#container_navibar{
+  position: fixed;
+  top: 80px;
+  width: 1030px;
+  margin: 0 50% 0 50%;
+  left: -515px;
+  font-weight:normal;
+}
+.navibar_link{
+  float: left;
+  font-size: 20px;
+  line-height: 34px;
+  margin-right: 65px;
+}
+.navibar_link:hover{
+  border-bottom-width: 2px;
+  border-color: #000;
+  border-bottom-style: solid;
+  color: #000;  
+}
+#signet{
+  float: right;
+  width: 16px;
+  height: 17px;
+  margin-top: 7px;
+  background-image: url(images/AM_Signet.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 16px 17px;
+}
+
+#abstand{
+  float: left;
+  height: 100px;
+  width: 100%;
+}
+
+
+
+@media screen and (max-width: 1130px) {
+  #container_navibar{
+    position: fixed;
+    top: 80px;
+    width: 90%;
+    margin: 0 5% 0 5%;
+    left: 0px;
+  }
+  #content_container{
+    width: 90%;
+  }
+  .bild_container{
+    position: relative;
+    opacity: 0;
+    margin-bottom: 80px;
+  }
+  img{
+    width: 100%;
+    height: auto;
+  }
+  .project_titel{
+    max-width: 90%;
+    font-size: 100px;
+    line-height: 110px;
+    background-size: 7px 115px;
+  }
+  h1{
+    font-size: 100px;
+    line-height: 110px;
+  }
+  #text_contact{
+    font-size: 100px;
+    line-height: 110px;
+  }
+}
+
+@media screen and (max-width: 1060px) {
+  h1{
+    font-size: 80px;
+    line-height: 90px;
+  }
+  #text_contact{
+    font-size: 80px;
+    line-height: 90px;
+  }
+  .project_titel{
+    font-size: 80px;
+    line-height: 90px;
+    background-size: 6px 85px;
+  }
+  .bild_beschreibung{
+    font-size: 40px;
+    line-height: 48px;
+  }
+  #content_container{
+    top: 160px;
+    width: 90%;
+  }
+  #container_navibar{
+    top: 40px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  h1{
+    font-size: 60px;
+    line-height: 70px;
+  }
+  #text_contact{
+    font-size: 60px;
+    line-height: 70px;
+  }
+  .project_titel{
+    font-size: 60px;
+    line-height: 70px;
+    background-size: 4px 65px;
+  }
+  .bild_beschreibung{
+    font-size: 30px;
+    line-height: 38px;
+  }
+  #content_container{
+    top: 160px;
+  }
+  #container_navibar{
+    top: 40px;
+    width: 90%;
+  }
+  .navibar_link{
+    margin-right: 40px;
+  }
+  .bild_container{
+    margin-bottom: 60px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  h1{
+    font-size: 30px;
+    line-height: 40px;
+  }
+  #text_contact{
+    font-size: 30px;
+    line-height: 40px;
+  }
+  .project_titel{
+    font-size: 30px;
+    line-height: 40px;
+    background-size: 2px 30px;
+  }
+  #content_container{
+    top: 100px;
+    width: 90%;
+  }
+  #container_navibar{
+    top: 10px;
+  }
+  .navibar_link{
+    font-size: 11px;
+    line-height: 26px;
+
+    margin-right: 20px;
+  }
+  #signet{
+    margin-top: 6px;
+    width: 12px;
+    height: 13px;
+    background-size: 12px 13px;
+  }
+  .bild_beschreibung{
+    font-size: 20px;
+    line-height: 28px;
+  }
+  .bild_container{
+    margin-bottom: 40px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+

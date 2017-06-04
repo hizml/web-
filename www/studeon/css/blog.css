@@ -1,0 +1,42 @@
+@charset "utf-8";
+/* CSS Document */
+.main{ padding:31px 15px 42px;; width:1125px; margin:0 auto; position:relative; height:1890px; }
+.main .m-left{ width:825px; float:left;  }
+.m-left>h2{ font-size:18px; line-height:44px; height:44px; }
+.m-left p{ font-size:12px; line-height:23px; color:#ababab; padding-bottom:11px; width:820px;}
+.main span{ color:#eb634d;}
+.main .img{ width:813px; height:417px; border:6px solid #ed5844;}
+.main .img img{width:813px; height:417px; }
+.main .img-icon{  position:absolute; left:749px; top:492px;}
+.main .img-icon a{ display:block; width:41px; height:41px;}
+.main .i-icon1{ width:41px; height:41px; background:url(../images/s-icons.png) no-repeat -241px -123px; float:left;}
+.main .i-icon2{ background-position:-292px -123px; margin-left:3px;}
+.m-left>h6{ line-height:39px; height:39px; padding-top:2px; font-weight:normal; font-size:14px; color:#9fa4a7;}
+.m-left>h5{ font-size:26px; line-height:47px; height:47px; color:#282828; padding-top:20px;font-weight:normal;}
+.m-left form{ margin-left:8px;}
+.m-left form label{ display:block; line-height:24px; height:24px; color:#474747; font-size:18px; }
+.m-left form input{width:776px; height:38px; line-height:38px; margin-bottom:16px; background:#eeeeee; padding:0 16px;color:#757575;}
+.m-left form textarea{ width:776px; height:134px; padding:16px 16px 0;color:#757575; background:#eeeeee; margin-bottom:16px; }
+.m-left form .sub{ display:block; width:145px; height:51px; line-height:51px;  font-weight:bolder;border-radius:4px;background:#ed5844;box-shadow:0 0 8px 0 rgba(0,0,0,.5) inset; color:#fff;  cursor:pointer; }
+.m-left>h4{ font-size:26px; line-height:61px; height:61px; color:#282828; padding-top:19px;font-weight:normal;}
+.m-left .comm{ width:823px; height:199px; border:1px solid #d4d4d4;}
+.comm .text{ float:right; width:605px;}
+.m-left .comm img{ width:158px; height:158px; margin:17px 0 0 15px; float:left;}
+.comm .text h2{ line-height:20px;height:20px; width:580px; margin-right:24px; font-size:14px; color:#5b5b59; padding-top:15px;float:right;  }
+.comm .text p{width:580px; padding-bottom:0;  float:right; margin-right:24px;}
+.comm .text h3{ float:left; padding-top:24px; width:160px; color:#cdcdcd; font-size:12px;}
+.comm .text input{ width:99px; height:43px; line-height:43px; font-weight:bolder;border-radius:4px;background:#ed5844;box-shadow:0 0 8px 0 rgba(0,0,0,.5) inset; color:#fff;  cursor:pointer; float:right; margin:4px 97px 0 0;}
+.comm{ margin-bottom:40px;}
+/*right*/
+.list{ float:right; width:255px;}
+.list h3{ line-height:44px; height:44px; font-size:16px; padding-bottom:7px;}
+.list form{ border:1px solid #dbdbdb; width:255px; height:42px; margin:3px 0 7px 0;}
+.list .txt{ width:182px; height:42px; line-height:42px; padding:0 18px;   background:#fff; float:left; font-size:12px; color:#9a9f9b;}
+.list .sub{ width:35px; height:42px; line-height:42px; background:url(../images/search.png) no-repeat center #fff;  float:left;}
+.list ul{ padding-bottom:7px;}
+.list li{ font-size:14px; color:#9d9b99; line-height:23px; height:23px; padding-left:26px; background:url(../images/b_arrow.png) no-repeat left center;}
+.list li a{color:#9d9b99; }
+.list a img{ width:114px; height:73px; margin:0 6px 8px 4px;}
+
+
+

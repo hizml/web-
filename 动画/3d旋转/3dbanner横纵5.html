@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3dbanner横纵5</title>
+    <style>
+        *{margin: 0;padding: 0}
+        .box{width: 980px; height: 500px;position: absolute;left: 0;top: 0;right: 0;bottom: 0; margin: auto;transform-style: preserve-3d;perspective: 0px;transform: rotateX(0deg) rotateY(0deg)}
+        .item{}
+        .pic{position: absolute;}
+    </style>
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script>
+        $(function(){
+            var num=0;
+            var box=$('.box');
+            var xPic=5;
+            var yPic=4;
+            var h=box.height()/yPic;
+            var w=box.width()/xPic;
+            for(var i=0;i<4;i++){
+                    $('<div class="item"></div>').appendTo(box)
+            }
+            $('.item').each(function(index,element){
+                var deg=index*90;
+                for(var i=0;i<yPic;i++){
+                    for(var z=0;z<xPic;z++) {
+                        var t = i * 0.1;
+                        $('<div class="pic"></div>').css({
+                            'height': h,
+                            'width': w,
+                            'top': i * h + 'px',
+                            'left': z * w + 'px',
+                            'background-image': 'url("img/' + index + '.jpg")',
+                            'background-position': (-z * w) + 'px ' + (-i * h) + 'px',
+                            'transform': ' rotateX(' + deg + 'deg) rotateY(' + deg + 'deg) rotateZ(' + deg + 'deg)  translateZ(100px)',
+                            "transition": "transform .5s " + t + "s"
+                        }).appendTo(this)
+                    }                }
+            });
+
+            function run(){
+                num++;
+                $('.item').each(function(index,element){
+                    var deg=index*90-num*90;
+                    $(this).find('.pic').each(function(index,element){
+                        $(this).css({'transform':' rotateX(' + deg + 'deg) rotateY(' + deg + 'deg)  rotateZ(' + deg + 'deg) translateZ(100px)'})
+                    });
+                })
+            }
+
+            $(window).click(function(){
+                run()
+            });
+        })
+    </script>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

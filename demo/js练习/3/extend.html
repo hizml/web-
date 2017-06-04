@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>一颗赛艇</title>
+<style>
+*{margin:0; padding:0;}
+#btn{ width:300px; height:100px; line-height:100px; text-align:center; font-size:30px; margin:100px auto;}
+.mo{ width:100%; height:100%; background:#000; opacity:.5; position:fixed; z-index:70; top:0; left:0;}
+.errbox{ width:250px; height:130px; border:1px solid #000; text-align:center; position:absolute; z-index:80; background:#fff;top:0; left:0;}
+.errbox p{ line-height:50px; height:50px;}
+.errbox button{ margin-top:30px;}
+</style>
+</head>
+
+<body>
+<button type="button" id="btn">点我送你一颗赛艇</button>
+</body>
+</html>
+<script src="../jq/jquery-1.11.3.min.js"></script>
+<script>
+$.extend({
+	showCenter:function (obj){
+		obj.show();
+		function show(){
+			var l=( $(window).width()-obj.outerWidth())/2;
+			var t=($(window).height()-obj.outerHeight())/2;
+			obj.css({"left":l,"top":t});
+		};
+		show();
+		$(window).resize(show);
+	},
+	errBox:function(obo){
+		
+		var bob={width:300,txt:'来晚了！！！ 赛艇送完了'};
+		
+		var bbb=$.extend({},bob,obo)
+		
+		var modrl=$('<div class="mo"></div>');
+		var oBox=$('<div class="errbox" style=" width:'+bbb.width+'px"><p>'+bbb.txt+'</p><button type="button" >确定</button></div>');
+		$(document.body).append(oBox);
+		$(document.body).append(modrl);
+		
+		$.showCenter(oBox);
+		oBox.children('button').click(function(){
+			oBox.remove();
+			modrl.remove();
+		})
+	}
+})
+$('#btn').click(function(){
+	$.errBox({width:800,txt:'还有一颗赛艇！！'});
+})
+
+</script>

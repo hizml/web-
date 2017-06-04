@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+.box1{ width:100px; height:100px; background:#999; margin:0 auto;}
+.box2{ width:300px ;height:100px; background-color:rgba(143,136,136,.5); border:1px solid #666; border-radius:10px; margin:0 auto; text-align:center; position:relative; z-index:90; } 
+.om{ width:100%; height:100%; background:rgba(0,0,0,.3); position:fixed; left:0; top:0; z-index:70;}
+</style>
+</head>
+
+<body>
+<div class="box1" id="box1"></div>
+
+<script>
+function modal(){		//模态层
+var	oM=document.createElement("div");//创建覆盖页面的div 层级关系在弹框后
+	oM.className="om";	//给一个classname
+	document.body.appendChild(oM);	//在body里插入创建好的div
+	//return oM;			//抛出函数结果oM变量，后边调用
+	return function(){  	//抛出一个删除模态层的方法，闭包
+		document.body.removeChild(oM);
+	}
+}
+
+var oBox1=document.getElementById("box1");	
+function consirmBox(txt,fn){
+	var omom=modal();//存储函数的返回值，函数返回值和他本身不同，函数返回值需要存储
+	
+var	oBox2=document.createElement("div");
+	oBox2.className="box2";
+	oBox2.innerHTML='<p>' + txt+ '</p><p><button type="button">确定</button><button type="button">取消</button></p>';
+	document.body.appendChild(oBox2)	
+	
+var Btn=oBox2.getElementsByTagName("button");
+	Btn[0].onclick=function(){
+		fn && fn()
+		document.body.removeChild(oBox2);
+		//document.body.removeChild(omom);
+		omom();		//调用删除方法
+	}
+	Btn[1].onclick=function(){
+		document.body.removeChild(oBox2);
+		//document.body.removeChild(omom);
+		omom();
+	}
+}
+oBox1.onclick=function(){
+		consirmBox("你确定要OK吗",function(){
+			oBox1.style.display="none"
+		});	
+}
+/*var oDiv=document.getElementById("aaa");
+var oBox=document.getElementsByClassName("box")[0];
+var oPP=oBox.getElementsByTagName("p")[1];
+var Btn1=oPP.getElementsByTagName("button")[0];
+var Btn2=oPP.getElementsByTagName("button")[1];
+
+	
+	function confirmBox(txt){
+		var oP=oBox.getElementsByTagName("p")[0];
+		oBox.style.display="block";
+		oP.innerHTMl=txt;
+		Btn1.onclick=function(){
+			oDiv.style.display="none";
+			oBox.style.display="none"
+		}
+		Btn2.onclick=function(){
+			oBox.style.display="none"
+		}
+	}
+	
+
+	oDiv.onclick=function(){
+		confirmBox("aaaaaaaaaaaaa");
+	}
+*/
+
+
+
+
+</script>
+</body>
+</html>

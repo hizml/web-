@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+*{ margin:0; padding:0;}
+</style>
+</head>
+
+<body>
+<div id="box" style="width:100px; height:100px; background:#FC0509; position:absolute;"></div>
+</body>
+</html>
+<script src="../jq/jquery-1.11.3.min.js"></script>
+<script>
+$(function(){
+	var l=0;	//定义记宽度变量
+	$(document).keydown(function(ev){	//给document文档区定义一个键盘事件	ev为前边的事件 即键盘事件 点击的键盘是哪个
+		if(ev.keyCode==39){		//如果键盘code为39  即右
+			l+=10;				//宽度加10
+			var sW=$(document).width()//探测浏览器窗口宽度并存储
+			if(l>sW-$("#box").outerWidth()){ 	//如果l>浏览器宽度减去盒子宽度	就等于盒子如果出去了	避免盒子跑出去浏览器产生横向滚动条 
+				l=sW-$("#box").outerWidth();	//就让l等于浏览器像素减盒子宽
+			};
+			$("#box").css("left",l);	//给class 左 + l
+		};
+	})
+})
+</script>

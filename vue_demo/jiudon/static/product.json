@@ -1,0 +1,43 @@
+
+{
+    "P001": {
+      "name": "手机1",
+      "price": 1000,
+      "image": "http://backstage.jiudon.com/UploadFiles/Images/Folder_20160318/f_201603182201132031.jpg",
+      "detail": [
+        "http://backstage.jiudon.com/UploadFiles/Images/Folder_20160318/f_201603182201135837.jpg",
+        "http://backstage.jiudon.com/UploadFiles/Images/Folder_20160318/f_201603182201134899.jpg"
+      ],
+      "categoryID": "1"
+    },
+    "P002": {
+      "name": "电脑1",
+      "price": 800,
+      "image": "http://backstage.jiudon.com/UploadFiles/Images/Folder_20160318/f_201603182137322861.jpg",
+      "detail": [
+        "http://backstage.jiudon.com/UploadFiles/Images/Folder_20160318/f_201603182137320100.jpg",
+        "http://backstage.jiudon.com/UploadFiles/Images/Folder_20160318/f_201603182137324578.jpg"
+      ],
+      "categoryID": "2"
+    },
+    "P003": {
+      "name": "电脑2",
+      "price": 800,
+      "image": "http://backstage.jiudon.com/UploadFiles/Images/Folder_20160318/f_201603182137322861.jpg",
+      "detail": [
+        "http://backstage.jiudon.com/UploadFiles/Images/Folder_20160318/f_201603182137320100.jpg",
+        "http://backstage.jiudon.com/UploadFiles/Images/Folder_20160318/f_201603182137324578.jpg"
+      ],
+      "categoryID": "2"
+    },
+    "P004": {
+      "name": "手机2",
+      "price": 800,
+      "image": "http://backstage.jiudon.com/UploadFiles/Images/Folder_20160318/f_201603182137322861.jpg",
+      "detail": [
+        "http://backstage.jiudon.com/UploadFiles/Images/Folder_20160318/f_201603182137320100.jpg",
+        "http://backstage.jiudon.com/UploadFiles/Images/Folder_20160318/f_201603182137324578.jpg"
+      ],
+      "categoryID": "1"
+    }
+  }

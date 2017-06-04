@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+*{margin:0; padding:0;}
+.box{ width:500px; height:500px; background:red;}
+</style>
+</head>
+
+<body>
+<div class="box"></div>
+<h1>666</h1>
+</body>
+</html>
+<script src="../jq/jquery-1.11.3.min.js"></script>
+<script>
+//$("body").append("<div class='box'></div>");
+//$("body").append("<h1>666</h1>");
+$("body").append("<button>666</button>").click(function(){
+	$(".box").append($("h1"));
+});
+
+</script>

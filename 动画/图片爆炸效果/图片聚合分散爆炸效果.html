@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片聚合分散爆炸效果</title>
+    <style>
+        *{margin:0;padding: 0;}
+        body{overflow: hidden;}
+        #box{width: 980px; height: 500px;position: absolute;left: 0;top: 0;right: 0;bottom: 0;margin: auto;cursor: pointer}
+        .item{position: absolute;}
+    </style>
+    <script src="../jquery-3.1.1.min.js"></script>
+    <script>
+        $(function(){
+            var box=$('#box');
+            var xNum=30;    //x轴个数
+            var yNum=20;    //y轴个数
+            var parWidth=box.width();   //父级盒子宽度
+            var parHeight=box.height(); //父级盒子高度
+            var itemWidth=parWidth/xNum;    //碎片宽度
+            var itemHeight=parHeight/yNum;  //碎片高度
+            var _Num=2500;                  //偏移像素
+            var isGather=true;              //是否聚合
+            for(var x=0;x<xNum;x++){        //动态生成碎片
+                for(var y=0;y<yNum;y++){
+                    $('<div class="item">').css({'width':itemWidth,'height':itemHeight,'left':x*itemWidth+'px','top':y*itemHeight+'px','background-image':'url("images/24.jpg")','background-position':(-x*itemWidth)+'px '+(-y*itemHeight)+'px','transition':'all 1s'}).appendTo(box)
+                }
+            }
+            function disperse(){        //分散函数
+                $('.item').each(function(index,element){
+                    var xMove=Math.random()*2*_Num-_Num;  //x轴偏移量
+                    var yMove=Math.random()*2*_Num-_Num;  //y轴偏移量
+                    $(this).css({'transform':'translate('+xMove+'px,'+yMove+'px)'});
+                })
+            }
+            function gather(){          //聚合函数
+                $('.item').each(function(index,element){
+                    $(this).css({'transform':'translate(0px,0px)'});
+                })
+            }
+            $(window).click(function(){     //点击函数
+                if(isGather){
+                    disperse()
+                }else{
+                    gather()
+                }
+                isGather=!isGather;
+            })
+        })
+    </script>
+</head>
+<body>
+    <div id="box"></div>
+</body>
+</html>

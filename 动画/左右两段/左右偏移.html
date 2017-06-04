@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>左右两段旋转</title>
+    <style>
+        *{margin: 0;padding: 0}
+        .box{width: 100vw;height: 100vh;position: relative;}
+        .a{width: 100%;height: 100%;transform: skew(-20deg);position: absolute;top: 0;background-size: cover;overflow: hidden}
+        .left{left: -50vw;background-color: red}
+        .right{left: 50vw;background-color: blue}
+        .pic{width: 100%;height: 100%;transform: skew(20deg); }
+        .left .pic{background: url("images/03.jpg") no-repeat;transform-origin:100% 0 }
+        .right .pic{background: url("images/44.jpg") no-repeat;transform-origin:0 100%}
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="left a"><div class="pic"></div></div>
+    <div class="right a"><div class="pic"></div></div>
+</div>
+</body>
+</html>

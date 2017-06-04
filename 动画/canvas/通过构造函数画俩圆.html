@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>通过构造函数好多圆</title>
+    <script>
+        window.onload=function(){
+//            1.创建画布
+            var cvs=document.getElementById('cvs');
+            var ctx=cvs.getContext('2d');
+            var quantity=1000;      //小球数量
+//            2.构造函数
+            function Star(x,y,r,c,max,s){
+                this.x=x;   //x轴
+                this.y=y;   //y轴
+                this.radius=r;   //半径
+                this.color=c;   //颜色
+                this.max=max;     //最大
+                this.speed=s;       //速度
+                this.state=true;    //容错变量
+                this.draw=function(){       //绘制圆
+                    ctx.beginPath();        //开始路径
+                    ctx.arc(this.x,this.y,this.radius,0,Math.PI*2);
+                    ctx.fillStyle=this.color;
+                    ctx.fill();             //渲染圆
+
+                    if(this.state){
+                       this.radius+=this.speed;
+                        if(this.radius>this.max){
+                            this.state=!this.state;
+                        }
+                    }else{
+                        this.radius-=this.speed;
+                        if(this.radius<0){
+                            this.radius=0;
+                            this.state=!this.state;
+                        }
+                    }
+
+                }
+            }
+
+            var stars=[];
+
+            function init(){
+                for(var i=0;i<quantity;i++){
+                    var x=Math.random()*cvs.width;
+                    var y=Math.random()*cvs.height;
+
+                    var r=Math.random()*20+10;
+
+                    var c=color();
+                    var max=50;
+                    var s=Math.floor(Math.random()*3)+1;
+
+                    var star=new Star(x,y,r,c,max,s);
+
+                    stars.push(star);
+
+                }
+            }
+            init();
+
+            function run(){
+                ctx.clearRect(0,0,cvs.width,cvs.height);
+                for(var i=0;i<stars.length;i++){
+                    stars[i].draw();
+                }
+
+            }
+            setInterval(run,50);
+
+            function color(){
+                var r=Math.floor(Math.random()*255);
+                var g=Math.floor(Math.random()*255);
+                var b=Math.floor(Math.random()*255);
+                return 'rgb('+r+','+g+','+b+')'
+            }
+
+//        stars=[
+//                new Star(50,50,50,50,50)
+//        ]
+//            stars[0].draw()
+
+
+        };
+
+
+    </script>
+</head>
+<body>
+<canvas id="cvs" width="1800" height="700"></canvas>
+</body>
+</html>

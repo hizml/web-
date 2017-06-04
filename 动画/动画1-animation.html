@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动画</title>
+    <script src="jquery-3.1.1.min.js" type="javascript"></script>
+    <style>
+        *{margin: 0; padding: 0}
+        @keyframes run {
+            0%{width: 200px; height: 200px;}
+            50%{ width: 500px;height: 100px}
+            100%{ width: 200px; height: 200px;}
+        }
+        #box{
+            width: 200px; height: 200px; background-color: red; margin: 100px auto;
+            /*animation:run 3s infinite;*/
+            animation: run 3s ;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+</body>
+</html>

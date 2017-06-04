@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+*{ margin:0; padding:0}
+ul{ list-style:none}
+.wrap{ width:500px;font-size:14px; margin:50px auto}
+.countTxt{ display:block; text-align:right; padding-bottom:10px;}
+.countTxt em{ font-size: 16px; font-weight: bold; font-style: normal; padding: 0 5px}
+.countTxt .red{ color: red;}
+textarea{ padding:10px; display:block; width:480px; resize:none; height:100px; border:1px solid #ccc; font-size:14px}
+.commonBtn{ height:40px; width:100px; border:1px solid #ccc; margin:10px 0 0 380px}
+hr{ margin:20px 0}
+.talkList li{ border:1px solid #ccc; padding:25px 20px 20px; border-radius:10px; position:relative; margin-bottom:20px}
+.talkList li p{min-height:50px; margin-bottom:10px; word-break:break-all}
+.talkList li .toolsBar{ text-align:right}
+.talkList li .toolsBar span{ margin-left:20px; cursor:pointer}
+.talkList li time{ position:absolute; top:10px; right:15px; color:#ccc;}
+span{-moz-user-select:none;-webkit-user-select:none;user-select:none;}/*阻止鼠标选中文本*/
+</style>
+<script src="jquery-1.11.3.min.js"></script>
+<script>
+
+window.onload=function(){
+	var oTextarea=document.getElementsByTagName('textarea')[0];
+	var countTxt=document.getElementsByClassName('countTxt')[0];
+	var commonBtn=document.getElementsByClassName('commonBtn')[0];
+	var talkList=document.getElementsByClassName('talkList')[0];
+	
+	function isChinese(str){  //判断是不是中文
+		var reCh=/[u00-uff]/;
+		return !reCh.test(str);
+	};
+
+	oTextarea.onkeyup=function(){
+		var txtval=this.value;
+		txtval=$.trim(txtval);//清除段落前后空格
+		
+		//没有输入内容，发布按钮失效
+		commonBtn.disabled= txtval=="" ? true :false;
+		var str_length=0; //初始定义长度为0
+		for(var i=0;i<txtval.length;i++){
+			if(isChinese(txtval.charAt(i))) str_length=str_length+2;//中文为2个字符
+			else str_length=str_length+1;//英文一个字符
+		};
+		str_length=Math.ceil(str_length/2);//中英文相加除2 向下取整数（一个中文+一个英文）
+
+		var count=140-str_length;
+		if(count<0){
+			countTxt.innerHTML='超出<em class="red">'+Math.abs(count)+'</em>字';
+			commonBtn.disabled=true;
+		}else{
+			countTxt.innerHTML='您还可以输入<em>'+count+'</em>字';
+		};
+	};
+}
+//-------------------------------------------------------------
+$(function(){
+	var html='';
+	$('#btn').click(function(){
+		
+		var time=new Date();
+		var year=time.getFullYear();
+		var month=time.getMonth();
+		var today=time.getDate();
+		var hours=time.getHours();
+		var minu=time.getMinutes();
+		var sec=time.getSeconds();
+		html='<li>'+
+			'<p>'+$('#txt').val()+'</p>'+
+			'<div class="toolsBar">'+
+				'<span>顶 <b>0</b></span>'+
+				'<span>踩 <b>0</b></span>'+
+			'</div>'+
+			'<time>'+year+'年'+month+'月'+today+'日 '+hours+':'+minu+':'+sec+'</time>'+
+		'</li>';
+		$('.talkList').prepend(html);
+		$('#txt').val(null);
+		$('.countTxt em').html(140);
+		$('#btn').attr("disabled",true);
+		var y=0,z=0;
+		$('.talkList .toolsBar span').eq(0).click(function(){
+			
+			$(this).children("b").html(++y)	;
+			return false
+		})
+		$('.talkList .toolsBar span').eq(1).click(function(){
+			$(this).children("b").html(++z)	;
+		})
+	});	
+})
+
+
+</script>
+</head>
+
+<body>
+<div class="wrap">
+    <form>
+        <span class="countTxt">您还可以输入<em>140</em>字</span>
+        <textarea id="txt"></textarea>
+        <button class="commonBtn" id="btn" disabled type="button">发表说说</button>
+    </form>
+    <hr>
+    <ul class="talkList">
+        <!--<li>
+            <p>adsfa asdf asdf asdf</p>
+            <div class="toolsBar">
+                <span>顶 <b>0</b></span>
+                <span>踩 <b>0</b></span>
+            </div>
+            <time></time>
+        </li>-->
+    
+    </ul>
+
+</div>
+
+
+
+</body>
+</html>

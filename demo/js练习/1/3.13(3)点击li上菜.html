@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+li{ width:300px; height:50px; background:#AD595B; margin-bottom:20px; }
+.ac{ background-color:blue;}
+</style>
+</head>
+
+<body>
+<div class="box">
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</div>
+<script src="../jq/jquery-1.11.3.min.js"></script>
+<script>
+var arr=[32123,132132,31321,313,"烩面","胡辣汤"];
+$(function(){
+	$("li").click(function(){$(this).html(arr[$(this).index()]);});
+	$("li").hover(
+		function(){
+			$(this).addClass("ac");
+		},
+		function(){
+			$(this).removeClass("ac");
+		}
+	);
+	$("li").click(function(){
+		$(this).toggleClass("ac");
+	});
+});
+
+
+
+/*var aLi=document.getElementsByTagName("li");
+for(var i=0;i<aLi.length;i++){
+	aLi[i].index=i;
+	aLi[i].onclick=function(){
+		aLi[this.index].innerHTML=arr[this.index]
+	}
+}
+*/
+
+</script>
+</body>
+</html>

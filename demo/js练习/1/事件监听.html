@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+.box{ width:200px ;height:200px; background-color:#ddd;}
+</style>
+</head>
+
+<body>
+<div class="box"></div>
+<script>
+var oBox=document.getElementsByClassName("box")[0];
+	oBox.addEventListener("click",function(){
+		alert(1111)
+	},false);
+	
+	oBox.addEventListener("click",function(){
+		alert(6666);	
+	},false);
+</script>
+</body>
+</html>

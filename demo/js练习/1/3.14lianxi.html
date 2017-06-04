@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title> </title>
+<style>
+*{ margin:0; padding:0;}
+.box{width:200px; height:200px; background:#666; position:absolute;}
+a{ display:block; position:absolute; left:66px;}
+</style>
+</head>
+
+<body>
+<div class="box">123456789</div>
+<a href="www.baidu.com" onClick="return false">66666666666</a>
+<script>
+var oDiv=document.getElementsByClassName("box")[0];
+document.onkeydown=function(ev){	//键盘控制盒子移动
+	console.log(ev.keyCode)
+	if(ev.keyCode==39){
+		var l=oDiv.offsetLeft+10;
+		oDiv.style.left=l+"px";
+	}
+	/*if(ev.keyCode==37){
+		var l=oDiv.offsetLeft+10;
+		oDiv.style.left=l+"px";
+	}*/
+}
+document.oncontextmenu=function(){
+	return false;
+}
+document.onmousedown=function(){
+	return false;
+}
+/*document.onkeydown=function(ev){
+	if(ev.keyCode==123){
+		return false;
+	}
+}
+*/
+
+</script>
+</body>
+</html>

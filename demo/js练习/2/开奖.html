@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+li{ list-style:none;}
+#box{ width:410px;  border:1px solid #ccc; margin:0 auto; text-align:center; font-family:"微软雅黑"}
+#nnuum li{ width:35px; height:35px; border:2px solid red; float:left; margin-right:5px ; text-align:center; line-height:35px; font-size:18px; }
+button{ width:50px; height:30px; margin-top:40px;}
+#nb{ text-align:center; word-break:break-all;}
+</style>
+</head>
+
+<body>
+<div id="box">
+	<h5>双色球开奖</h5>
+	<ul id="nnuum">
+		<li>谈</li>
+		<li>笑</li>
+		<li>风</li>
+		<li>声</li>
+		<li>+1S</li>
+		<li>？</li>
+		<li>蛤？</li>
+		<li style="border-color:blue; font-size:26px; font-weight:bolder; line-height:32px;">□□</li>
+	</ul>
+	<button type="button" id="btn">开奖</button>
+	<p id="nb"></p>	
+</div>
+</body>
+</html>
+<script src="../jq/jquery-1.11.3.min.js"></script>
+<script>
+$(function(){
+	var timer;
+	var timer1;
+	
+	$("#btn").click(function(){
+		var n=0;
+		var arr=[];
+		for(var i=1; i<=33; i++){				
+			arr.push(i<10? "0"+i:i)	;		
+		};
+		
+		$("#btn").attr("disabled",true);
+			
+		timer1=setInterval(function(){
+			for( var j=n; j<=$("#nnuum li").length;j++){
+				var numm=parseInt(Math.random()*arr.length);
+				$("#nnuum li:eq("+j+")").html(arr[numm]);
+			}
+		},50);
+		
+		timer=setInterval(function(){
+			var num=parseInt(Math.random()*arr.length);
+			$("#nnuum li:eq("+n+")").html( arr.splice(num,1));
+			n++;
+			if(n==8){
+				clearInterval(timer);
+				clearInterval(timer1);
+				$("#nb").html(arr.toString())
+				$("#btn").attr("disabled",false)
+			};
+		},1000);
+		
+	});
+
+})
+</script>

@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+#box{ width:300px; height:250px; border:1px solid #999; border-radius:5px; text-align:center; margin:0 auto; }
+input{ width:250px; height:100px; border-top-color:#666; text-align:center; font-size:40px;}
+</style>
+</head>
+
+<body>
+<div id="box">
+	<h1>who?</h1>
+	
+	<input type="text" value="who?">
+	
+	<button type="button">开始</button>
+	<button type="button">停止</button>
+</div>
+</body>
+</html>
+<script src="../jq/jquery-1.11.3.min.js"></script>
+<script>
+var str="杨升zz曹晓宁zz秦崇阳zz毛凌锋zz温梓睿zz马志清zz靳宇zz张悦zz王宣zz王博俊zz周海涛zz赵丽zz张宏松zz王祎伟zz王治zz侍波zz赵高强zz杨林鲎zz王敬辉zz王鸿zz洪杰zz赵孟龙zz李帅zz王强zz郭争帅zz梁超zz张洁zz孙明野zz李志行zz曹天野zz刘朝阳zz张永鱼zz王钊zz徐林zz王阔zz程皓zz孙英范";
+var myname=str.split("zz");
+console.log(myname)
+var time;
+$("button:first").click(function(){
+	clearInterval(time);
+	time=setInterval(function(){
+		var num=parseInt(Math.random()*myname.length);
+		$("input").val(myname[num]);
+	},30)
+});
+$("button:last").click(function(){
+	clearInterval(time);
+})
+
+</script>

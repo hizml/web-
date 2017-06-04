@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+</body>
+</html>
+<script>
+
+/*var txt='aa aa  aaa'
+var re=/aa a/			//字面量声明方式
+var rea=new RegExp('aa a')
+console.log(re.test(txt))
+console.log(rea.test(txt))
+*/
+/*var txt='ababa';	//中括号里不能套小括号 小括号里可以套中括号；
+var re=/(a&[ba]){2}&a|(ab){2}/
+console.log(re.test(txt))
+var ttt=' ';
+var rea=/^ $/
+
+console.log(rea.test(ttt))
+*/
+/*var ttt=' ';
+var re=/^(130)|(132)|(135)|(137)|(138)|(170)|(187)|(188)|(155)\d{8}$/	//电话号
+*/
+
+
+
+var str='aa ab abc aabbaba  bbaabab'
+var zz=/[ab]/g;
+var xz=/[ab]{1,4}?/
+var a=str.match(xz)
+console.log(a)
+
+
+</script>

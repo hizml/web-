@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3d相册切换效果</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        li{list-style: none}
+        body{background-color: #000;height: 2000px}
+        .box{width: 600px; height: 400px;position: absolute;top: 0;left: 0;bottom: 0;right: 0;margin: auto}
+        button{position: absolute;bottom: -30px;}
+        .pic{transform-style: preserve-3d;perspective:1400px;position: relative;width: 100%;height: 100%;}
+        .item{font-size: 0;position: absolute;top: 0;left: 0;border-radius: 8px;background-color: #fff;transform-origin: left bottom;}
+        .item img{width: 600px;border-radius: 8px;transform: scale(.99,.98)}
+        .last{left: 0;}
+        .next{right: 0}
+    </style>
+    <script src="../jquery-3.1.1.min.js"></script>
+    <script>
+        $(function(){
+            var _pic=$('.pic'); //获取
+            var picNum=25;      //图片数量
+            var Zinterval=-50;   //每张图片间距 z轴
+            var Hinterval=-20;   //每张图片上下间距 y轴
+            var fTimer=500;       //第一张图延时插入相册最后 单位/毫秒
+            var aTimer=500;        //全部向前滚动时间  单位/毫秒
+            var _cartoonTime=1;   //翻页时动画效果时间  单位/s
+
+            //初始化图片
+            for(var i=0;i<picNum;i++){
+                var z=i*Zinterval;  //间距递增
+                var h=i*Hinterval;  //y轴递增
+                $('<div class="item"><img src="img/'+i+'.jpg"></div>').css({
+                    'transform':'translateZ('+z+'px) translateY('+h+'px)',
+                    'transition':'all '+_cartoonTime+'s'
+                }).appendTo(_pic);
+            }
+
+            //next点击事件
+            var state=true;
+            $('.next').click(function(){
+                if(!state){
+                    return false;
+                }
+                state=false;
+
+                var first= _pic.children().eq(0);  //第一张图片
+                first.css({'transform':'rotateX(-179deg)','opacity':'0'});     //179deg处理兼容性问题
+                setTimeout(function(){
+                    first.css({
+                        'transform':'rotateX(0deg) translateZ('+(picNum*Zinterval)+'px) translateY('+(picNum*Hinterval)+'px)',
+                        'opacity':'1'
+                    }).appendTo(_pic);
+                    setTimeout(set,aTimer);
+                },fTimer);
+
+                //复位函数
+                function set(){
+                    var item=_pic.children();
+                    item.each(function(index,element){
+                        var z=index*Zinterval;  //间距递增
+                        var h=index*Hinterval;  //y轴递增
+                        $(this).css({'transform':'translateZ('+z+'px) translateY('+h+'px)'})
+                    });
+                    state=true;
+                }
+
+            });
+
+
+            //上一张
+            $('.previous').click(function(){
+                if(!state){
+                    return false;
+                }
+                state=false;
+
+                var last= _pic.children().last();  //最后一张图片
+
+                setTimeout(function(){
+                    last.css({
+                        'transform':'rotateX(0deg) translateZ('+(-picNum*Zinterval)+'px) translateY('+(-picNum*-Hinterval)+'px)',
+                        'opacity':'1'
+                    });
+                    setTimeout(set,aTimer);
+                },fTimer);
+                last.css({'transform':'rotateX(-179deg)','opacity':'0'}).prependTo(_pic);     //179deg处理兼容性问题
+
+                function set(){
+                    var item=_pic.children();
+                    item.each(function(index,element){
+                        var z=index*Zinterval;  //间距递增
+                        var h=index*Hinterval;  //y轴递增
+                        $(this).css({'transform':'translateZ('+(z)+'px) translateY('+(h)+'px)'})
+                    });
+                    state=true;
+                }
+            });
+
+
+
+
+
+        })
+    </script>
+</head>
+<body>
+    <div class="box">
+        <div class="pic"></div>
+        <button type="button" class="previous">上一张</button>
+        <button type="button" class="next">下一张</button>
+    </div>
+</body>
+</html>

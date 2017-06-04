@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>手风琴效果</title>
+    <script src="../jquery-3.1.1.min.js"></script>
+    <style>
+        *{margin:0; padding:0}
+        li{list-style: none;}
+        .box{width:410px;height:200px;margin: 50px auto;overflow: hidden;padding-left: 240px;}
+        ul{width: 900px;}
+        ul::after{content: '';display: block;clear: both;}
+        li{float: left;font-size: 0;background-color: #fff; padding-left: 2px;transition: all 1s;margin-left:-240px;cursor: pointer }
+
+    </style>
+    <script>
+        $(function(){
+            var oLi=$('#box li');
+            oLi.hover(function(){
+                var a=$(this).index();
+                oLi.eq(a+1).css({'margin-left':'0px'})
+            },function(){
+                var a=$(this).index();
+                oLi.eq(a+1).css({'margin-left':'-240px'})
+            })
+        })
+    </script>
+</head>
+<body>
+    <div id="box" class="box">
+        <ul>
+            <li><img src="images/abstract.jpg" alt=""></li>
+            <li><img src="images/landscapes.jpg" alt=""></li>
+            <li><img src="images/nature.jpg" alt=""></li>
+            <li><img src="images/people.jpg" alt=""></li>
+            <li><img src="images/urban.jpg" alt=""></li>
+        </ul>
+    </div>
+</body>
+</html>

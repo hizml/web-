@@ -1,0 +1,109 @@
+body, ul, ol, li, dl, dd, h1, h2, h3, h4, h5, h6, p, textarea, input ,button,i,s{ margin: 0; padding: 0; }
+header,section,article,aside,footer{display: block;}
+li { list-style: none; }
+a,s{ text-decoration: none;color: #666; }
+input, img,button  { border: none; }
+input, button { outline: none;}
+i,em{ font-style: normal; }
+textarea{ border:none; resize:none; outline:none;}
+body { font: 12px/1.5 arial,'Microsoft YaHei', tahoma,  Hiragino Sans GB, \\5b8b\4f53, sans-serif; color: #666; background-color: #FFFFFF; -webkit-font-smoothing: antialiased;}        
+::selection {background: rgb(0,0,0);color: #fff;}
+a:hover{color: #e0a240;}
+.clearfix{*zoom: 1;}
+.clearfix::after{content: '.'; clear: both;display: block;visibility: hidden;font-size: 0; height: 0;}
+html,body{height: 100%;}
+
+/*--nav--*/
+
+@keyframes banner1{
+	from{transform: translateY(800px);}
+	to{transform: translateY(0px);}
+}
+@keyframes banner2{
+	from{transform: translatex(-800px);}
+	to{transform: translateY(0px);}
+}
+@keyframes banner3{
+	from{transform: translateY(-800px);}
+	to{transform: translateY(0px);}
+}
+
+@-webkit-keyframes banner1{
+	from{transform: translateY(800px);}
+	to{transform: translateY(0px);}
+}
+@-webkit-keyframes banner2{
+	from{transform: translatex(-800px);}
+	to{transform: translateY(0px);}
+}
+@-webkit-keyframes banner3{
+	from{transform: translateY(-800px);}
+	to{transform: translateY(0px);}
+}
+
+@-moz-keyframes banner1{
+	from{transform: translateY(800px);}
+	to{transform: translateY(0px);}
+}
+@-moz-keyframes banner2{
+	from{transform: translatex(-800px);}
+	to{transform: translateY(0px);}
+}
+@-moz-keyframes banner3{
+	from{transform: translateY(-800px);}
+	to{transform: translateY(0px);}
+}
+
+@-ms-keyframes banner1{
+	from{transform: translateY(800px);}
+	to{transform: translateY(0px);}
+}
+@-ms-keyframes banner2{
+	from{transform: translatex(-800px);}
+	to{transform: translateY(0px);}
+}
+@-ms-keyframes banner3{
+	from{transform: translateY(-800px);}
+	to{transform: translateY(0px);}
+}
+
+@-o-keyframes banner1{
+	from{transform: translateY(800px);}
+	to{transform: translateY(0px);}
+}
+@-o-keyframes banner2{
+	from{transform: translatex(-800px);}
+	to{transform: translateY(0px);}
+}
+@-o-keyframes banner3{
+	from{transform: translateY(-800px);}
+	to{transform: translateY(0px);}
+}
+
+header{background:url(../images/oshin-slide-1.jpg) no-repeat center top / cover ; height: 100%;}
+header nav{text-align: center;}
+header nav .logo{position: absolute; top: 0; left: 0;padding: 25px 0 0 2.3%;font-size: 0;}
+header nav .icon{position: absolute; top: 0; right: 0;padding: 25px 2.3% 0 0 ;}
+header nav>ul{display: inline-block;padding-top: 25px; }
+header nav>ul li{float: left;}
+header nav>ul li a{margin: 0 21px;display:inline-block; height: 50px;text-transform: uppercase; transition: all .3s;font-size:12px; font-weight:600;line-height: 50px; }
+header nav>ul li:nth-child(1) a{color: #e0a240;}
+header nav .icon{font-size: 18px;}
+header nav .icon a{margin-left: 22px;line-height: 50px;}
+header section{width: 364px; height: 313px;position: absolute; left: 0;top: 0;right: 0;bottom: 0; margin: auto;text-align: center;color: #000;overflow: hidden;}
+header section p:nth-child(1){font-family: arial;font-size: 18px; letter-spacing: 8px;line-height: 80px; text-transform: uppercase;font-weight: 400;color: #222; animation: banner1 .5s ease-out;-webkit-animation: banner1 .5s ease-out;-moz-animation: banner1 .5s ease-out;-ms-animation: banner1 .5s ease-out;-o-animation: banner1 .5s ease-out;}
+header section p:nth-child(2){font-family: "arial black"; font-size: 46px;text-transform: uppercase;display: inline-block;width: 350px;height: 102px;line-height: 102px; border: 7px solid #000;letter-spacing: 10px; animation: banner2 1.5s ease-out;-webkit-animation: banner2 1.5s ease-out;-moz-animation: banner2 1.5s ease-out;-ms-animation: banner2 1.5s ease-out;-o-animation: banner2 1.5s ease-out;}
+header section p:nth-child(3){font-family: 'Aparajita'; font-style: oblique; color: #222; font-size: 35px;line-height: 117px;  animation: banner3 1s ease-out;-webkit-animation: banner3 1s ease-out;-moz-animation: banner3 1s ease-out;-ms-animation: banner3 1s ease-out;-o-animation: banner3 1s ease-out;}
+
+/*--main--*/
+
+.main .oshine{text-align: center;}
+.main .oshine h3{font-size: 24px; color: #222222;line-height: 63px;padding-top: 81px;}
+.main .oshine i{display: inline-block; width: 10px; height: 10px;background-color: #e0a240;transform: rotate(45deg);}
+.main .oshine i:before{content: '';display: block;width: 20px;height: 1px; background-color: #e8e8e8;transform: rotate(-45deg) translateX(-42px) translateY(-0.5px);}
+.main .oshine i:after{content: '';display: block;width: 20px;height: 1px; background-color: #e8e8e8;transform: rotate(-45deg) translateX(29px) translateY(-1px);}
+.main .oshine .oshine-pic{font-size: 0;}
+
+
+
+

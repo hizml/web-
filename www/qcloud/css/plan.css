@@ -1,0 +1,41 @@
+@charset "utf-8";
+/* CSS Document */
+/*banner*/
+.banner{ height:700px; background: url(../images/palan-banner_02.jpg) no-repeat top center #2e6aa8; position:relative;}
+.banner .banner-btn{ width:277px; height:50px; border:1px solid #fff; border-radius:2px; position:absolute; left:0; right:0; top:535px; margin:0 auto;}
+.banner .banner-btn a{ display:block;line-height:50px; text-align:center; font-size:20px; color:#FFFFFF; }
+.banner .banner-btn:hover{ background:#2277da; border-color:#2277da;}
+/*main*/
+.main .what{margin-top:108px; height:514px; border-top:1px solid #e6e6e6;text-align:center;}
+.main .what h2{ font-size:40px;color:#4a4849; font-weight:normal; width:595px; background:#fff;margin:0 auto;   position:relative; top:-30px; }
+.main .what p{font-size:18px; line-height:26px; color:#686870;  }
+.main .what img{padding-top:25px;}
+.provide{ height:860px; background:#f5f5f5; padding-top:108px;}
+.provide .pro-inner{ border-top:1px solid #e4e4e4;}
+.pro-inner h2{ font-size:40px; color:#424b5a; display:block; width:600px; background:#f5f5f5; margin:0 auto; text-align:center; position:relative; top:-30px;font-weight:normal;}
+.pro-inner ul{ margin-left:154px; padding-top:27px; margin-right:7px;}
+.pro-inner li{ text-align:center; width:180px; padding-right:166px; float:left; height:355px;}
+.pro-inner li img { width:140px; height:140px;}
+.pro-inner li h4{ font-size:24px; color:#484649; line-height:62px; height:62px; font-weight:normal;}
+.pro-inner li p{ line-height:24px; font-size:16px; color:#656269;}
+
+.why{ padding-top:108px; height:418px;}
+.why-inn{ border-top:1px solid #e4e4e4; position:relative;}
+.why h2{ font-size:40px; color:#424b5a; display:block; width:400px; background:#fff;; margin:0 auto; text-align:center; position:relative; top:-30px;font-weight:normal;}
+.why-line{width: 678px; margin:50px auto 0; height:50px; border-top:1px #0c6bc7 dashed;}
+.why-line .one,.two,.three{ float:left; position:relative; top:-26px;}
+.two{ margin:0 264px;}
+.why-inn ul{ padding-left:230px; float:left;}
+.why-inn .yes{ margin:0 196px;}
+.why-inn span{ color:#666666; font-size:14px;}
+.why-inn li{ float:left; font-size:20px; color:#64666a; text-align:center; display:inline-block; }
+.why-inn a{ display:block;line-height:50px; text-align:center; font-size:20px; color:#FFFFFF;  width:279px; height:52px;  border-radius:2px; position:absolute; left:0; right:0; top:275px; margin:0 auto; background:#0090e7;}
+.activity{ background:#f5f5f5; padding-top:108px; height:349px;}
+.active-inn{ border-top:1px solid #e4e4e4;}
+.active-inn h2{ font-size:40px; color:#424b5a; display:block; width:345px; background:#f5f5f5; margin:0 auto; text-align:center; position:relative; top:-30px; margin-bottom:50px; font-weight:normal;}
+.active-inn li{ width:260px; height:190px; background:#e6e4e5; margin: 0 12px; float:left;}
+.active-inn li img{ width:260px; height:150px;}
+.active-inn li p{ font-size:12px; padding:0 15px; line-height:35px; height:35px; }
+.active-inn li a{ color:#191514;}
+.active-inn ul{ background:url(../images/left-right_03.jpg) no-repeat left center;height:190px; padding:0 32px;}
+.act-inn{ background:url(../images/left-right_05.jpg) no-repeat right center;height:190px;}

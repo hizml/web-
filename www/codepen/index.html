@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>codepen</title>
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css"/>
+		<style>
+			*{margin: 0; padding: 0;}
+			li{list-style: none;}
+			a{text-decoration: none;}
+			i{font-style: normal;}
+			body{font-family: arial;}
+			::selection{color: #fff; background-color: green;opacity: .5;}
+			::-moz-selection{color: #fff;opacity: .6; background-color: green;}
+			header,section,article,aside,footer{display: block;}
+			.inner{width: 1000px; margin: 0 auto;}
+			@font-face {
+				font-family:'Conv_Munro';
+				src:url(fonts/Munro.eot),
+					url(fonts/Munro.otf),
+					url(fonts/Munro.svg),
+					url(fonts/Munro.ttf),
+					url(fonts/Munro.woff);
+			}
+			@font-face {
+				font-family: 'Conv_CalibriL';
+				src: url('fonts/CalibriL.eot');
+				src: local('☺'), url('fonts/CalibriL.woff') format('woff'), url('fonts/CalibriL.ttf') format('truetype'), url('fonts/CalibriL.svg') format('svg');
+				font-weight: normal;
+				font-style: normal;
+			}
+
+
+					
+			header{height: 110px; background: #e5e5e5;line-height: 110px;}
+			header .logo{ float: left; font-size: 35px;color: #4986a3; }
+			header .logo a{ color: #4986a3;font-family: 'Conv_Munro',arial; padding-left: 22px;}
+			header .logo i{font-size: 50px;}
+			header .menu{float: right;font-family: 'Conv_Munro',arial;}
+			
+			/*线性渐变 deg角度 逆时针*/
+			.banner{
+				padding: 100px 0; text-align: center;color: #fff;
+			}
+			.banner,footer{
+				background-image:-moz-linear-gradient(45deg,#9dc66a,#4fa59a 30%,#4361c3);			
+				background-image:-webkit-linear-gradient(45deg,#9dc66a,#4fa59a 30%,#4361c3);				
+				background-image:-ms-linear-gradient(45deg,#9dc66a,#4fa59a 30%,#4361c3);				
+				background-image:-o-linear-gradient(45deg,#9dc66a,#4fa59a 30%,#4361c3);	
+				background-image:linear-gradient(45deg,#9dc66a,#4fa59a 30%,#4361c3);							
+				
+			}
+			/*径向渐变 无角度 字母方向前加了 at 不能再加兼容*/
+			/*section{		
+				background-image: -moz-radial-gradient(left,red,blue);
+				background-image: -webkit-radial-gradient(left,red,blue);
+				background-image: -ms-radial-gradient(left,red,blue);
+				background-image: -o-radial-gradient(left,red,blue);
+				background-image: radial-gradient(left,red,blue);							
+			}*/
+			/*定义动画*/
+				@-webkit-keyframes animations{
+					0%{text-shadow:0 0 0px #fff}
+					50%{text-shadow:0 0 30px #fff,0 0 30px #fff,0 0 30px #fff,0 0 30px #fff}
+					100%{text-shadow:0 0 0px #fff}
+				}
+				@-moz-keyframes animations{
+					0%{text-shadow:0 0 0px #fff}
+					50%{text-shadow:0 0 30px #fff,0 0 30px #fff,0 0 30px #fff,0 0 30px #fff}
+					100%{text-shadow:0 0 0px #fff}
+				}
+				@keyframes animations{
+					0%{text-shadow:0 0 0px #fff}
+					50%{text-shadow:0 0 30px #fff,0 0 30px #fff,0 0 30px #fff,0 0 30px #fff}
+					100%{text-shadow:0 0 0px #fff}
+				}						
+			/*调用动画*/
+			.banner .cloud{
+				font-size: 80px; 
+				/*text-shadow: 
+				0 0 10px #fff,
+				0 0 20px #fff,
+				0 0 30px #fff;*/
+				-webkit-animation: animations 2s ease infinite;
+				-moz-animation: animations 2s ease infinite;
+				animation: animations 2s ease infinite;				
+			}
+
+			.banner h3{line-height: 70px; font-size: 41px; opacity: .9; font-weight: normal;font-family: 'Conv_CalibriL',arial;}
+			
+			.banner h3 a{border-bottom: 1px #fff dotted; color: #fff; transition: all 1s ease;  position: relative;}
+			.banner h3 a::before{content: '';border-top: 1px #fff dotted; width: 100%;position: absolute;top: 100%; left: 0px;transition:all .5s ;opacity: 0;}
+			.banner h3 a:hover::before{top:0;opacity: 1;}
+			
+			.banner h3 span{font-weight: bold;}
+			.banner p{line-height: 40px; font-size: 21px;opacity: .5;}
+			.banner .btn{padding-top: 34px; }
+			
+			.banner .btn a{display:inline-block;width: 175px; height: 50px;line-height: 50px; font-size: 18px;text-transform: uppercase;color:#fff; border: 1px solid #fff; border-radius: 5px; opacity:.7; position: relative; transition: all 1s; }
+			.banner .btn a::after{content: ''; width: 1px; height: 100px; background: #fff;position: absolute;top: 51px; left: 50%;}
+			.banner .btn a:hover{padding: 0 50px; background-color: rgba(255,255,255,.3)}
+			
+			.main{background-color: #eaf9fe; padding:104px 0 127px;}
+			.main ul{float: left;width: 500px;}
+			
+			.main li{float: left; margin: 40px;transform:rotate(45deg);border: 1px solid #759eb5;transition: all .5s;overflow: hidden;}
+			.main a{width: 140px; height: 140px; line-height:140px;border-radius: 5px;display: block;text-align: center; font-size: 70px;transform:rotate(-45deg)}
+		
+			.main article{float: right;width: 500px;}
+			.main::after{content: ''; display: block; clear: both;}
+			/*.fa-code{ color: #c3e999;}
+			.fa-bolt{color: #8bdeaa;}
+			.fa-camera-retro{color: #6bd3c8;}
+			.fa-cog{color: #58add2;}
+			.fa-desktop{color: #4988cf;}
+			.fa-calendar{color: #6b88e4;}*/
+			.main li:hover{background: #88D1FE;}
+			.main li a{transition: all .5s; }
+			.main li:nth-child(1) a{ color: #c3e999; }
+			.main li:hover:nth-child(1) a{transform:rotate(-45deg) scale(1.3);}
+			
+			.main li:nth-child(2) a{color: #8bdeaa;}
+			.main li:hover:nth-child(2) a{transform: rotate(315deg);}
+			
+			.main li:nth-child(3) a{color: #6bd3c8;}
+			.main li:hover:nth-child(3) a{transform:rotate(-45deg)  skewX(45deg) ;}
+			
+			.main li:nth-child(4) a{color: #58add2;}
+			.main li:hover:nth-child(4) a{transform:rotate(180deg) scale(1.3);}
+			
+			.main li:nth-child(5) a{color: #4988cf;}
+			.main li:hover:nth-child(5) a{transform:rotate(-45deg) scale(.8);}
+			
+			.main li:nth-child(6) a{color: #6b88e4;}
+			.main li:hover:nth-child(6) a{transform:rotate(-45deg) translateY(-20px);}
+			
+			.main li:hover a{color: #fff;text-shadow: 0 0 10px #fff,0 0 20px #fff;}
+						
+			.main article h3{font-size: 35px; color: #4686a1; line-height: 52px;   padding-bottom: 26px;position: relative;} 
+			.main article h3::after{content: ''; display: block; width: 160px; height: 1px; background-color: #4984a2; position: absolute; bottom: 0px;left: 0px;margin-bottom: 3px;}
+			.main article p{padding-top: 29px;line-height: 32px; font-size: 16px;}
+			
+			footer{height: 186px;text-align: center;}
+			footer .icon{padding-top:55px;  padding-bottom: 21px;}
+			footer .icon a{color: #fff; opacity: .5; margin: 0 14px; font-size: 22px;transition:all 0.5s;display: inline-block;}
+			footer .icon a:hover{transform:scale(2);color: #fff;opacity: 1;text-shadow: 0 0 5px #fff,0 0 5px #fff;}
+			footer p{font-family: "微软雅黑"; font-size: 16px; line-height: 24px; color:#F1F1F1;opacity: .8;}
+			footer p a{text-decoration: underline;color:#F1F1F1;opacity: .8;}
+			
+		</style>
+	</head>
+	<body>
+		<header>
+			<div class="inner">
+				<div class="logo"><i class="fa fa-codepen"></i><a href="#none">codepen</a></div>
+				<div class="menu">menu</div>
+			</div>
+		</header>
+		<section class="banner">
+			<div class="inner">
+				<div class="cloud"><i class="fa fa-cloud"></i></div>
+				<h3>Hi, I'm <span>Photon</span>, another fine</h3>
+				<h3>little freebie from <a href="###">HTML5 UP</a>.</h3>
+				<p>Accumsan feugiat mi commodo erat lorem ipsum, sed magna</p>
+				<p>lobortis feugiat sapien sed etiam volutpat accumsan.</p>
+				<div class="btn"><a href="#none">Discover</a></div>		
+			</div>
+		</section>
+		<section class="main">
+			<div class="inner">
+				<ul>
+					<li><a href="#none"><i class="fa fa-code"></i></a></li>
+					<li><a href="#none"><i class="fa fa-bolt"></i></a></li>
+					<li><a href="#none"><i class="fa fa-camera-retro"></i></a></li>
+					<li><a href="#none"><i class="fa fa-cog"></i></a></li>
+					<li><a href="#none"><i class="fa fa-desktop"></i></a></li>
+					<li><a href="#none"><i class="fa fa-calendar"></i></a></li>
+				</ul>
+				<article>
+					<h3>Lorem ipsum dolor adipiscing amet dolor consequat</h3>
+					<p>Adipiscing a commodo ante nunc accumsan interdum mi ante adipiscing. A nunc lobortis non nisl amet vis volutpat aclacus nascetur ac non. Lorem curae eu ante amet sapien in tempus ac. Adipiscing id accumsan adipiscing ipsum.</p>
+					<p>Blandit faucibus proin. Ac aliquam integer adipiscing enim non praesent vis commodo nunc phasellus cubilia ac risus accumsan. Accumsan blandit. Lobortis phasellus non lobortis dit varius mi varius accumsan lobortis. Blandit ante aliquam lacinia lorem lobortis semper morbi col faucibus vitae integer placerat accumsan orci eu mi odio tempus adipiscing adipiscing adipiscing curae consequat feugiat etiam dolore.</p>
+					<p>Adipiscing a commodo ante nunc accumsan interdum mi ante adipiscing. A nunc lobortis non nisl amet vis volutpat aclacus nascetur ac non. Lorem curae eu ante amet sapien in tempus ac. Adipiscing id accumsan adipiscing ipsum.</p>
+				</article>
+			</div>
+		</section>
+		<footer>
+			<div class="icon">
+				<a href="###"><i class="fa fa-twitter"></i></a>
+				<a href="###"><i class="fa fa-facebook"></i></a>
+				<a href="###"><i class="fa fa-instagram"></i></a>
+				<a href="###"><i class="fa fa-github"></i></a>
+				<a href="###"><i class="fa fa-envelope"></i></a>		
+			</div>
+			<p>(c) Copyright 2017 zml. All Rights Reserved.</p>
+			<p>Design: <a href="###">www.xxx.com</a></p>
+		</footer>
+	</body>
+</html>

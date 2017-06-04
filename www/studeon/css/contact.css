@@ -1,0 +1,18 @@
+@charset "utf-8";
+/* main */
+.main { padding-top:59px;}
+.main h2{ line-height:93px; height:93px; font-size:32px; text-transform:uppercase; text-align:center;}
+.main p{ line-height:23px; font-size:13px; color:#afafaf; margin:0 135px; text-align:center;}
+form{ padding:32px 11px 0; height:467px;}
+form input{ width:333px; height:47px; line-height:47px; padding:0 17px; color:#b9b9b9; font-size:17px; border:1px solid #dcdbe0; border-radius:4px; background:#ededed;}
+form .sub{ text-align:center; font-size:16px; font-weight:bolder; line-height:57px; height:57px; width:225px;border-radius:4px;background:#ed5844;box-shadow:0 0 8px 0 rgba(0,0,0,.5) inset; color:#fff;  cursor:pointer; margin:45px auto 0; display:block;}
+form textarea{ width:1081px; height:214px; border:1px solid #dcdbe0; border-radius:4px; color:#b9b9b9; background:#ededed; font-family:arial; padding:17px 17px; font-size:17px; margin-top:24px;}
+
+
+
+
+
+
+
+
+

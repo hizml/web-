@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+*{ margin:0; padding:0;}
+.box1{ width:700px; position:relative; left:100px; top:100px;  }
+.box1 img{ width:100%; display:block;}
+.box1 .Magnifier{ width:150px; height:150px; position:absolute; top:0; left:0; background:red; opacity:.3; cursor:move;}
+.box2{ width:450px; height:450px; position:absolute; left:850px; top:100px; overflow:hidden; display:none}
+.box2 img{ position:absolute; left:0; top:0}
+</style>
+</head>
+
+<body>
+<div class="box1" id="box1">
+	<img src="j-20 1.jpg">
+	<span id="Magnifier"></span>
+</div>
+<div class="box2" id="box2">
+	<img src="j-20 1.jpg">
+</div>
+</body>
+</html>
+<script src="jquery-1.11.3.min.js"></script>
+<script>
+$('#box1').mousemove(function(ev){	//鼠标移动事件
+	$('#box1 span').addClass('Magnifier');	//鼠标进入 给放大镜一个class 让他显示
+	$('#box2').show();	//让右边放大区域显示
+	var l=ev.clientX-$(this).offset().left-$('#Magnifier').width()/2;	//鼠标在放大镜中间 计算为鼠标所在x轴减去 它所在父级距左边距离再减去放大镜一半距离  y轴同理
+	var t=ev.clientY-$(this).offset().top-$('#Magnifier').height()/2;
+	if(l<0){	//限制左边范围  如果鼠标的值为负数 说明在外边  就让他等于零
+		l=0
+	};
+	if(t<0){	//top同上
+		t=0
+	};
+	
+	var l_max=$(this).width()-$('#Magnifier').width();	//限制放大镜右边范围 小图区域减去放大镜区域
+	var t_max=$(this).height()-$('#Magnifier').height();//限制下范围  同上
+	if(l>l_max){	//如果 鼠标值大于右边距 说明出来了 让鼠标的值等于最大的范围值
+		l=l_max;
+	};
+	if(t>t_max){	//同上
+		t=t_max;
+	};
+	$('#Magnifier').css({'left':l,'top':t});	//把放大镜的left top值赋给他
+	var ll=($('#box2 img').width()-$('#box2').width())*(l/l_max);	//右边图片的left值为 右图的宽 减去显示区的宽 为实际移动宽  再乘以 （ 计算好的鼠标 y轴距离图片左边值/实际放大镜运动值 即为倍数）
+	var tt=($('#box2 img').height()-$('#box2').height())*(t/t_max)	// top值同上  即为 右边图片有效移动距离乘以倍数  （ 鼠标移动距离比上放大镜实际移动距离）
+	$('#box2 img').css({'left':-ll,'top':-tt})		//负值
+	
+});
+$('#box1').mouseout(function(){		//鼠标移出删除
+	$('#box1 span').removeClass('Magnifier');
+	$('#box2').hide();
+
+});
+
+</script>

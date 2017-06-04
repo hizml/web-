@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+
+<select>
+	<option value="2011">2011年</option>
+	<option value="2012">2012年</option>
+	<option value="2013">2013年</option>
+	<option value="2014">2014年</option>
+	<option value="2015">2015年</option>
+	<option value="2016">2016年</option>
+	<option value="2017">2017年</option>
+	<option value="2018">2018年</option>
+	<option value="2019">2019年</option>
+	<option value="2020">2020年</option>
+	<option value="2021" selected>2021年</option>
+</select>
+<select>
+	<option value="1">1月</option>
+	<option value="2">2月</option>
+	<option value="3">3月</option>
+	<option value="4">4月</option>
+	<option value="5">5月</option>
+	<option value="6">6月</option>
+	<option value="7">7月</option>
+	<option value="8">8月</option>
+	<option value="9">9月</option>
+	<option value="10">10月</option>
+	<option value="11">11月</option>
+	<option value="12">12月</option>
+</select>
+<select>
+	<option value="1">1日</option>
+	<option value="2">2日</option>
+	<option value="3">3日</option>
+	<option value="4">4日</option>
+	<option value="5">5日</option>
+	<option value="6">6日</option>
+	<option value="7">7日</option>
+	<option value="8">8日</option>
+	<option value="9">9日</option>
+	<option value="10">10日</option>
+	<option value="11">11日</option>
+	<option value="12">12日</option>
+	<option value="13">13日</option>
+	<option value="14">14日</option>
+	<option value="15">15日</option>
+	<option value="16">16日</option>
+	<option value="17">17日</option>
+	<option value="18">18日</option>
+	<option value="19">19日</option>
+	<option value="20">20日</option>
+	<option value="21">21日</option>
+	<option value="22">22日</option>
+	<option value="23">23日</option>
+	<option value="24">24日</option>
+	<option value="25">25日</option>
+	<option value="26">26日</option>
+	<option value="27">27日</option>
+	<option value="28">28日</option>
+	<option value="29">29日</option>
+	<option value="30">30日</option>
+	<option value="31">31日</option>
+</select>
+<button>-------------</button>
+<p></p>
+</body>
+</html>
+<script src="../jq/jquery-1.11.3.min.js"></script>
+<script>
+//计算距离未来的天数
+$("button").click(function(){		//绑定点击事件
+	var timer;
+	timer=setInterval(function(){
+		var oDate=new Date;		//从系统拿到实例化一块表
+		var now_time=oDate.getTime();//获取当前毫秒数
+		
+		var year=$("select:eq(0)").val();		//输入的年
+		var mouse=$("select:eq(1)").val()-1;	//获取输入的年月日   月份从0-11，获取到的数值 为1-12 所以加1
+		var day=$("select:eq(2)").val()
+		
+		oDate.setFullYear(year,mouse,day);		//将输入的年月日数据 改变这块表
+		oDate.setHours(0,0,0,0);			//到达未来天数的 0时0分0秒0毫秒
+		var future_time=oDate.getTime();//输入的日期的毫秒数	改变后的时间毫秒
+		var dif_time=(future_time-now_time)/1000;  
+		/*输入时间减去当前时间 为相差毫秒数  /1000   为相差秒数*/
+		var days=parseInt(dif_time/86400);		
+		//秒数除以86400位天数
+		
+		//---------------------------------------------------------------
+		dif_time= dif_time%86400;//过滤天数 剩的多余的时间	单位 s
+		
+		var hours=parseInt(dif_time/3600);    //计算剩余小时	
+		
+		dif_time=dif_time%3600; //过滤小时
+		
+		var minn=parseInt(dif_time/60); //秒除以60剩分钟
+		
+		var sss=parseInt(dif_time%60);//过滤分钟 就剩秒
+		
+		$("p").html("距离"+year+"年"+(mouse+1)+"月"+day+"日"+"还差"+days+"天"+hours+"时"+minn+"分"+sss+"秒")
+	},1000)
+
+})
+
+
+
+</script>

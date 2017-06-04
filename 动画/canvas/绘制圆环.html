@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绘制圆环</title>
+    <script>
+        window.onload=function(){
+            var timer;
+            var cvs=document.getElementById('cvs');
+            var ctx=cvs.getContext('2d');
+
+            var w=cvs.width;
+            var h=cvs.height;
+
+            var x=w/2;
+            var y=h/2;
+
+            ctx.lineWidth=16;
+
+            var r=Math.min(w,h)/2-ctx.lineWidth/2;
+
+            var total=10;       //帧数
+
+            var pro=0;
+
+            var oneTime=100;      //一步运行时间 毫秒
+
+            var percent=1;      //百分比
+
+            function draw(){
+                console.log('啊啊啊');
+                if(pro>total){
+                    clearInterval(timer);
+                    return;
+                }
+
+                ctx.clearRect(0,0,cvs.width,cvs.height);
+
+                //背景圆环
+                ctx.beginPath();
+                ctx.strokeStyle='#87ceeb';
+                ctx.arc(x,y,r,0,Math.PI*2);
+                ctx.stroke();
+
+                //进度条
+                ctx.beginPath();
+                ctx.strokeStyle='purple';
+                ctx.lineCap='round';    //两端圆帽
+                var p=percent*pro/total;
+                var start=(Math.PI*3/2)*pro/total;
+                var end=start+(Math.PI*2)*p;
+
+                ctx.arc(x,y,r,start,end);
+                ctx.stroke();
+
+                //文字绘制
+                var text=(p*100).toFixed(2)+'%';
+                ctx.textAlign='center';     //左右 居中
+                ctx.textBaseline='middle';  //上下 居中
+                ctx.font='20px arial';
+                ctx.fillStyle='orange';     //颜色
+                ctx.fillText(text,x,y);
+                pro++;
+
+            }
+            timer=setInterval(draw,oneTime);
+         }
+    </script>
+</head>
+<body>
+    <canvas id="cvs" width="200" height="200"></canvas>
+</body>
+</html>

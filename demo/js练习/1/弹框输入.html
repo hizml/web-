@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>prompt</title>
+<style>
+*{ margin:0; padding:0;}
+body{ font-size:14px; font-family:"微软雅黑"；}
+.pro{ width:400px; height:170px; border:1px solid #666;padding:10px; position:absolute; }
+.pro p{ padding:10px 0;}
+.pro .txt{ width:400px; height:80px; padding:10px; box-sizing:border-box; resize:none;}
+.pro .btn{ padding-top:15px; text-align:center;}
+.pro button{ width:50px; height:30px; text-align:center;}
+.box{ width:300px; height:300px; border:1px solid #999;}
+.box textarea{width:300px;box-sizing:border-box; height:200px;resize:none; }
+</style>
+</head>
+
+<body>
+<div class="box"><textarea></textarea><button type="button" id="btn1">请输入</button></div>
+
+<!--<div class="pro">
+	<p>请输入内容</p>
+	<textarea class="txt"></textarea>
+	<div class="btn">
+		<button type="button">确定</button>
+		<button type="button">取消</button>
+	</div>
+</div>
+--></body>
+</html>
+<script>
+function promptBox(txt,fn){
+	if(!window.box){
+		var pro=document.createElement("div");
+			pro.className="pro";
+			pro.innerHTML='<p>'+txt+'</p>'
+			+'<textarea class="txt"></textarea>'
+			+'<div class="btn">'
+				+'<button type="button">确定</button>'
+				+'<button type="button">取消</button>'
+			+'</div>'
+			document.body.appendChild(pro);
+	window.box=true;
+			center(pro);
+			var textarea=pro.getElementsByTagName("textarea")[0];
+			//========================================================
+	var oBtn=pro.getElementsByTagName("button");
+			oBtn[0].onclick=function(){
+				document.body.removeChild(pro);
+				window.box=false;
+				fn&&fn(textarea.value);
+				if(!textarea.value){
+					alert(txt)
+				}
+			}
+			oBtn[1].onclick=function(){
+				document.body.removeChild(pro);
+				window.box=false;
+			}
+	}
+}
+	var oBtn1=document.getElementById("btn1");
+		oBtn1.onclick=function(){
+			var box=document.getElementsByClassName("box")[0];
+			var	txt=box.getElementsByTagName("textarea")[0];
+			
+			promptBox("请输入内容",function(val){
+				txt.value=val;
+			})
+		}
+
+function center(obj){
+	obj.style.display="block";
+	function show(){
+		var l=(document.documentElement.clientWidth-obj.offsetWidth)/2;
+		var t=(document.documentElement.clientHeight-obj.offsetHeight)/2;
+		obj.style.left=l+"px";
+		obj.style.top=t+"px";
+	};
+	show();
+	window.onresize=show;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

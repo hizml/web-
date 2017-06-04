@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>事件委派</title>
+<style>
+*{ margin:0; padding:0;}
+#box{ width:250px; background:#999;margin-left:500px }
+button{margin-left:500px}
+p,strong,span{ display:block; width:200px; height:50px; background:#666; margin-bottom:20px; }
+</style>
+</head>
+
+<body>
+<button type="button">++++++++++++++++++++++++++++++++</button>
+<div id="box">
+	<p></p>
+	<strong></strong>
+	<p></p>
+	<strong></strong>
+	<p></p>
+	<span></span>
+	<p></p>
+	<span></span>
+	<p></p>
+	<strong></strong>
+	<p></p>
+	<strong></strong>
+	<p></p>
+	<span></span>
+	<p></p>
+	<span></span>
+	<p></p>
+	<strong></strong>
+	<p></p>
+	<strong></strong>
+	<p></p>
+	<span></span>
+	<p></p>
+	<span></span>
+	<p></p>
+	<strong></strong>
+	<p></p>
+	<strong></strong>
+	<p></p>
+	<span></span>
+	<p></p>
+	<span></span>
+	<p></p>
+	<strong></strong>
+	<p></p>
+	<strong></strong>
+	<p></p>
+	<span></span>
+	<p></p>
+	<span></span>
+</div>
+
+<script>
+//点击每一个子元素 弹出“ok”
+	var oDiv=document.getElementById("box")
+		oDiv.onclick=function(ev){
+			var oEl=ev.target; //事件发生目标元素
+			if(oEl==this){		//如果点击的是他自己的话 就结束 
+				return;
+			}
+			alert("i'm very ok")//否则就弹出alert
+			if(oEl.tagName=="P"){
+				oEl.style.background="blue"
+			}
+			
+		}
+		document.getElementsByTagName("button")[0].onclick=function(){
+			for(var i=0; i<1000; i++){
+				oDiv.innerHTML+="<p></p>"
+			}
+		}
+</script>
+
+
+</body>
+</html>

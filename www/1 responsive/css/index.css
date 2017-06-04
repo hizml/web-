@@ -1,0 +1,16 @@
+body,ul,p,h1,h2,h3,h4,dl,dd,form,input,textarea,select { padding:0; margin:0; font-family:arial; }
+li { list-style:none; }
+img { border:none; }
+a { text-decoration:none; }
+a:hover { text-decoration:underline; }
+
+div,body,ul,li{border:solid 1px red;}
+body {width:1100px; margin:0 auto; }
+.logo { margin:20px 0; width:290px;}
+.phone{ width:20px;}
+.help{ width:240px; color:#9f959e;}
+.num{ width:240px; color:#6e686a;}
+.top_main li{ border-left-style:ridge;}
+
+
+

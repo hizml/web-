@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  
+  <title>Arne Meister Contemporary Art – Contact</title>
+  <meta charset="utf-8" />
+  <meta name="description" content="Arne Meister makes Contemporary Art." />
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1" />
+
+  <!--[if lt IE 9]>
+    <meta http-equiv="refresh" content="0; URL=ie.html">
+  <![ENDIF]-->
+
+  <link rel="stylesheet" href="styles/styles.css" />
+  <script src="js/jquery-1.9.1.js"></script>
+  <link type="text/css" rel="stylesheet" href="styles/css.css"/>
+
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+ 
+</head>
+
+<body>
+<div id="content_container">
+	<div id="text_contact"><p>Torstr. 102 <br />
+10119 Berlin</p>
+
+<p><a href="mailto:&#x6b;&#x6f;&#x6e;&#116;&#x61;&#107;&#x74;&#64;&#x61;&#114;&#110;&#x65;&#x6d;&#x65;&#x69;&#x73;&#116;&#101;&#x72;&#x2e;&#100;&#x65;">&#64;&#77;&#97;&#x69;&#108;</a></p>
+</div>
+	<div id="abstand"><div>
+</div>
+
+<div id="container_navibar">
+	<a href="index.html" id="link_home" class="navibar_link">Arne Meister</a>
+	<a href="projects.html" id="link_projects" class="navibar_link">Projects</a>
+	<a href="contact.html" id="link_contact" class="navibar_link">Contact</a>
+	<a href="index.html"><div id="signet"></div></a>
+</div>
+
+
+
+<script type="text/javascript">
+
+//Seitenunterstreichung////////////////////////////////////////
+  $("#link_contact").css('border-bottom-width','2px');
+  $("#link_contact").css('border-bottom-style','solid');
+  $("#link_contact").css('border-color','#000');
+
+//Conten einblenden////////////////////////////////////////
+  $('#text_contact').delay(200).animate({opacity:'1'}, 800, 'swing');
+
+//...////////////////////////////////////////
+  function pos(){
+    $("#content_container").css('left',window.innerWidth/2-document.getElementById('content_container').offsetWidth/2);
+  }
+  pos();
+  window.onresize = pos;
+
+</script>

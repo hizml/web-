@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>日历</title>
+<style>
+*{margin:0; padding:0;}
+#calendar{width:210px;margin:100px auto; overflow:hidden;border:1px solid #000; padding:20px; position:relative}
+#calendar h4{ text-align:center; margin-bottom:10px}
+#calendar .a1{ position:absolute;top:20px;left:20px;}
+#calendar .a2{ position:absolute;top:20px;right:20px;}
+#calendar .week{height:30px; line-height:20px;border-bottom:1px solid #000; margin-bottom:10px}
+#calendar .week li{ float:left;width:30px;height:30px; text-align:center; list-style:none;}
+#calendar .dateList{ overflow:hidden; clear:both}
+#calendar .dateList li{float:left;width:30px;height:30px; text-align:center; line-height:30px;list-style:none;}
+#calendar .dateList .red{ background:#F90; color:#fff;}
+#calendar .dateList .sun{ color:#f00;}
+#calendar .dateList .ccc{ color:#ccc;}
+
+</style>
+<script src="../jq/jquery-1.11.3.min.js"></script>
+<script>
+$(function(){
+	var iNow=0;//定义空容器 存储++--
+	
+	function run(n){
+		var oDate=new Date;	//实例化 钟
+		oDate.setMonth(oDate.getMonth()+n);//每次都设定一下月	++--
+		var year=oDate.getFullYear();	//得到当前年
+		var month=oDate.getMonth();	//得到当前月
+		var today=oDate.getDate();	//得到当前天数
+		
+		var allDays=[31,28,31,30,31,30,31,31,30,31,30,31][month];	//mouth为月份索引值 罗列出全部月份天数
+		if(year%4==0 && year%100!=0 || year%400==0){	//判断闰年
+			if(month==1){	//判断2月天数 如果为闰年 则为29天
+				allDays=29;
+			};
+		};
+		oDate.setDate(1);	//将时间调为本月一号
+		var firstWeek=oDate.getDay();//获取本月一号星期几	星期几 0-6 0为星期日
+		if(firstWeek==0){
+			firstWeek=7;	//判断本月一号星期几 如果为星期天 则为7 星期一开始 China
+		};
+		//本月插入上月剩余
+		for(var i=0;i<firstWeek-1;i++){
+				
+			$('.dateList').append('<li></li>');
+				
+		};
+		//插入日期
+		for(var i=0;i<allDays;i++){
+			$('.dateList').append('<li>'+(i+1)+'</li>');
+		};
+
+		$('.dateList li').each(function(index, element){
+			var inner=$(this).text();
+			if(inner<today && n<=0){
+				$(this).addClass('ccc');
+			}else if(inner==today&&n==0){
+				$(this).addClass('red');
+			}else if(index%7==5 || index%7==6 ){
+				$(this).addClass('sun');
+			};
+			if(n<0){
+				$(this).addClass('ccc');
+			}
+		});
+		$('#calendar h4').text(year+"年"+(month+1)+"月");
+		
+	};
+	run(0);
+
+//================================================================
+	$('.a1').click(function(){	//绑定点击事件
+		$('#calendar .dateList li').remove();	//清空其他月
+		iNow--;					//减1
+		run(iNow);				//调用  修改月份--	oDate.getMonth()+n
+	});
+	$('.a2').click(function(){
+		$('#calendar .dateList li').remove();
+		iNow++;
+		run(iNow);
+	});
+})
+</script>
+</head>
+
+<body>
+<div id="calendar">
+	<h4>2017年3月</h4>
+	<a href="javascript:;" class="a1">上月</a>
+	<a href="javascript:;" class="a2">下月</a>
+	<ul class="week">
+		<li>一</li>
+		<li>二</li>
+		<li>三</li>
+		<li>四</li>
+		<li>五</li>
+		<li>六</li>
+		<li>日</li>
+	</ul>
+	<ul class="dateList"></ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>放大镜</title>
+<style>
+*{ margin:0; padding:0;}
+.box1{ width:700px; position:relative; left:100px; top:100px;  }
+.box1>img{ width:100%; display:block;}
+.box1 .Magnifier{ width:150px; height:150px; position:absolute; top:0; left:0; cursor:move; overflow:hidden;display:none; box-shadow:0 0 10px 0 rgba(0,0,0,.50);}
+.box1 .Magnifier img{ position:absolute; left:0; top:0}
+/*.box2{ width:450px; height:450px; position:absolute; left:850px; top:100px; overflow:hidden; display:none}
+.box2 img{ position:absolute; left:0; top:0}*/
+</style>
+</head>
+
+<body>
+<div class="box1" id="box1">
+	<img src="j-20 1.jpg">
+	<span id="Magnifier" class="Magnifier"><img src="j-20 1.jpg"></span>
+</div>
+
+</body>
+</html>
+<script src="jquery-1.11.3.min.js"></script>
+<script>
+$('#box1').mousemove(function(ev){
+	$('#box1 span').show();
+	var l=ev.clientX-$(this).offset().left-$('#Magnifier').width()/2;
+	var t=ev.clientY-$(this).offset().top-$('#Magnifier').height()/2;
+	if(l<0){l=0};
+	if(t<0){t=0};
+	var l_max=$(this).width()-$('#Magnifier').width();
+	var t_max=$(this).height()-$('#Magnifier').height();
+	if(l>l_max){l=l_max;};
+	if(t>t_max){t=t_max;};
+	$('#Magnifier').css({'left':l,'top':t});
+	var ll=($('#Magnifier img').width()-$('#Magnifier').width())*(l/l_max);
+	var tt=($('#Magnifier img').height()-$('#Magnifier').height())*(t/t_max);
+	console.log(-ll,-tt)
+	$('#Magnifier img').css({'left':-ll,'top':-tt})
+	
+});
+$('#box1').mouseout(function(){
+	$('#box1 span').hide();
+
+});
+
+</script>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1-canvas</title>
+    <script>
+        window.onload=function(){
+            var cvs=document.getElementById('cvs');
+//            1.创建canvas画布
+            var ctx=cvs.getContext('2d');
+//            2.绘制矩形    ctx.fillRect(50,50,300,200); x轴起点 y轴起点 width height
+            ctx.fillRect(50,50,300,200);
+//            3.边框
+            ctx.strokeRect(40,40,350,400);
+
+        }
+    </script>
+</head>
+<body>
+    <canvas id="cvs" width="500" height="500"></canvas>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3dbanner抽风效果1</title>
+    <style>
+        *{margin: 0;padding: 0}
+        .box{width: 980px; height: 500px;position: absolute;left: 0;top: 0;right: 0;bottom: 0; margin: auto;transform-style: preserve-3d;perspective: 0px;transform: rotateX(20deg) rotateY(20deg)}
+        .item{width: 100%;height: 100%;position: absolute;top: 0;left: 0;transition: all 2s;opacity: 1;}
+        .pic{position: absolute;width: 100%;height: 100%;transition: all 4s}
+    </style>
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script>
+        $(function(){
+            var num=0;
+            var box=$('.box');
+            var pic=200;
+            var w= box.width()/pic;
+            for(var i=0;i<4;i++){
+                var deg=i*90;
+                $('<div class="item"></div>').css({'transform':'rotateX('+deg+'deg) translateZ(250px)'}).appendTo(box)
+            }
+            $('.item').each(function(index,element){
+                var deg=index*90;
+                for(var i=0;i<pic;i++){
+                    $('<div class="pic"></div>').css({'width':w,'left':i*w+'px','background-image':'url("img/'+index+'.jpg")','background-position':(-i*w)+'px 0px','transform':'rotateX(0deg) translateZ(0px)'}).appendTo(this)
+                }
+            });
+
+            function run(){
+                num++;
+                $('.pic').each(function(index,element){
+                    var deg=index*90-num*90;
+                    $(this).css({'transform':'rotateX('+deg+'deg) translateZ(250px)'})
+                })
+            }
+
+            $(window).click(function(){
+                run()
+            });
+        })
+    </script>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

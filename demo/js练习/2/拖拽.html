@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+*{ margin:0; padding:0;}
+div{ width:200px; height:200px; background:#39B940; position:absolute; }
+</style>
+</head>
+
+<body>
+
+</body>
+</html>
+<script src="../jq/jquery-1.11.3.min.js"></script>
+<script>
+$("body").append("<div>456456456456</div>");
+function drag(obj,title){
+	title = title || obj
+	obj.mousedown(function(ev){
+		var offset=$(this).offset();	//点击的那个offset	offset定位到有定位属性的父级
+		var disX=ev.pageX-offset.left;	//计算x轴偏移量
+		var disY=ev.pageY-offset.top;	//y轴偏移量
+		$(document).mousemove(function(ev){
+			var l=ev.pageX-disX;
+			var t=ev.pageY-disY;
+			
+			
+			if(l<0){
+				l=0;
+			};
+			if(t<0){
+				t=0;
+			};
+			
+			var sW=$(document).width();
+			var sH=$(document).height();
+			
+			if(l>sW-obj.outerWidth()){
+				l=sW-obj.outerWidth();
+			};
+			if(t>sH-obj.outerHeight()){
+				t=sH-obj.outerHeight();
+			};
+			
+			
+			obj.css({"left":l,"top":t})
+		});
+		$(document).mouseup(function(){
+			$(document).unbind("mousemove");
+		});
+		return false;
+	});
+};
+drag($("div"))
+
+</script>

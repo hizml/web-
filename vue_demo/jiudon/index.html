@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,init-scale=1.0,max-scale=1.0,min-scale=1.0,user-scalable=no">
+    <title>九东商城</title>
+    <style type="text/css">
+      html{
+        font-size:100px;
+      }
+      body{
+        margin:0 auto; text-align:center; font-family:'微软雅黑','宋体';
+        -webkit-tap-highlight-color:transparent;
+        position:relative;
+      }
+      a{
+        text-decoration:none; color:Black; border:0px; outline:none; blr:expression(this.onFocus=this.blur());
+      }
+      img{
+        border:0px;
+      }
+      ul{
+        margin:0px; padding:0px;
+      }
+      ul li{
+        margin:0px; padding:0px; list-style:none;
+      }
+      table{
+        padding:0px; margin:0px;
+      }
+      input[type="text"]::-ms-clear{
+        display:none; font-family:'微软雅黑','宋体';
+      }
+
+      .top{
+        width:12.8rem; height:1.27rem; background-color:rgba(222,49,3,0.8);
+        overflow:hidden;
+      }
+      .top .logo{
+        height:1.27rem; float:left;
+      }
+      #search{
+        padding:0px 0.86rem 0rem 0.29rem; margin:0.25rem; height:0.8rem; width:9.14rem;
+        float:left; border-radius:0.1rem; font-size:0.42rem; line-height:2;
+        border:none; outline:none;
+      }
+      #navigator{
+        width:12.8rem; height:1.27rem; padding-top:0.1rem; overflow:hidden; position:fixed;
+        bottom:0px; left:0px; z-index:999; background-color:#f3f3f3;
+        display:-webkit-flex;
+        display:flex;
+        flex-flow:row nowrap;
+        justify-content:flex-start;
+      }
+      #navigator a{
+        display:block; width:2.56rem; height:1.27rem;
+        display:inline-flex;
+        flex-flow:column nowrap;
+        justify-content:flex-start;
+        align-items:center;
+      }
+      #navigator a img{
+        width:0.5rem;
+        height:0.5rem;
+        margin-top:0.1rem;
+      }
+      #navigator a span{
+        display:block; width:100%; height:0.67rem; overflow:hidden; text-align:center;
+        font-size:0.3rem; line-height:2;
+        color:#555;
+      }
+      #navigator a span.nav_color{
+        color:rgba(251,53,0,1);
+      }
+
+
+    </style>
+    <script type="text/javascript">
+      var _w=document.documentElement.clientWidth||document.body.clientWidth;
+      var _size=100/(1280/_w);
+      document.documentElement.style.fontSize=_size+"px";
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+  </body>
+</html>
+

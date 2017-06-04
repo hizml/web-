@@ -1,0 +1,71 @@
+@charset "utf-8";
+/* CSS Document */
+body,h1,h2,h3,h4,h5,h6,p,ul,ol,li,dl,dd,textarea,input{ margin:0; padding:0;}
+a{ text-decoration:none;}
+img,input,textarea{ border:none;}
+li { list-style:none;}
+input{ outline:none;}
+body{ font-family:arial,"Microsoft YaHei";}
+.inner{ width:1200px; margin:0 auto;}
+/*top bar*/
+.top{ height:35px; background:#171f2a;}
+.top .login{ font-size:12px; height:35px; line-height:35px; margin-left:5px;float:left;}
+.top .login span{ color:#4b5053; margin:0 10px;}
+.top  a{ color:#9795a0;}
+.top a:hover{ color:#2277da;}
+.top .right-bar{ float:right; font-size:12px; height:35px; line-height:35px;}
+.top .right-bar li{ float:left;}
+.top .right-bar span{  color:#4b5053; margin:0 10px;}
+.top .right-bar .active{ color:#ffbe04;}
+.top .right-bar .admin{ padding-left:24px; background:url(../images/top-bg_03.jpg) left center no-repeat;}
+.top .right-bar .custom{ padding-right:20px; background:url(../images/top-custom_03.jpg) no-repeat right center;}
+/*header*/
+.header{ height:60px; background:#2c3343;}
+/*logo*/
+.header .logo{ width:316px; margin-left:10px; float:left;}
+.header .logo li{ float:left;}
+.header .internet{ width:94px; height:34px; padding-top:13px;}
+.header .logo li span img{ height:32px;padding-top:17px;margin:0 13px;}
+.header .logo .qcoud{ padding-top:7px;}
+.header .logo .qcoud img { width:91px; height:41px;}
+.header .logo .years{ margin:9px 0 0 13px;}
+.header .logo .years img{ width:80px; height:38px;}
+/*nav*/
+.nav{ float:left;}
+.nav li{ height:60px; float:left;}
+.nav li a{ font-size:16px; color:#fff; line-height:60px;display:block; padding:0 20px;}
+.nav li a:hover{ background:#202833; color:#ffbe04; }
+.nav li .active{ background:#202833; color:#ffbe04; }
+/*footer*/
+.footer{ background:#27303f;height:430px;}
+.footer .f-top{ padding:28px 0 0 10px; height:220px; float:left;}
+.footer .f-top dl{ float:left; width:192px;}
+.footer .f-top dt{ font-size:14px; color:#fff; line-height:43px; height:43px; }
+.footer .f-top dd{  font-size:12px; line-height:26px; height:26px;}
+.footer .f-top dd a{color:#828e9a; }
+.footer .f-top dd a:hover{color:#2277da;}
+.footer .erwei{ float:left; width:182px;}
+.footer .erwei h4{ font-size:14px; color:#fff; line-height:43px; height:43px; }
+.footer .erwei img { width:84px; height:84px; display:block;}
+.footer .erwei p{ line-height:43px;font-size:12px;color:#828e9a; display:inline;}
+.footer .erwei .xl{ background:url(../images/weibo_09.jpg) no-repeat center; display:block; height:18px; width:18px; display:inline-block; margin-top:12px; margin-right:10px;}
+.footer .erwei .tx{ background:url(../images/weibo_06.jpg) no-repeat center; display:block; height:18px; width:18px; display:inline-block; margin-top:12px;}
+.footer .foot-right{ width:240px; float:left; padding-top:28px;height:220px;}
+.footer .foot-right dt{ float:left; height:90px;}
+.footer .foot-right dl{ padding-top:12px; float:left;}
+.footer .foot-right dd{ margin-left:24px; float:left; line-height:20px;font-size:12px; }
+.footer .foot-right dd a{ line-height:20px; display:block;color:#828e9a;}
+.footer .foot-right dd a:hover{color:#2277da;}
+.footer .foot-right dl h6{ font-size:12px; color:#fff;  height:17px; line-height:17px;}
+.link dl{ text-align:center; height:34px;}
+.link dd{ display:inline-block; line-height:34px; font-size:14px; color:#747682;}
+.link dd a{ color:#747682;}
+.link dd a:hover{color:#2277da;}
+.link  dd span{ margin:0 10px; line-height:34px;}
+.link dt{ padding-right:30px; margin-top:6px;display:inline-block;}
+.f-in{ height:282px;}
+.bottom{width:1200px; margin:0 auto; text-align:center; line-height:29px; padding-top:13px; background:url(../images/fot-nav-bar_06.jpg) repeat-x top; font-size:12px; color:#565e69;}
+/*go tu school*/
+.go-to-school{ position:fixed; right:3px; top:240px;}
+.go-to-school .goto{ width:83px; height:74px;}
+.go-to-school .er,.tel,.sao{ width:40px; height:36px; margin-bottom:7px; margin-left:29px; }

@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>判断窗口上下</title>
+<style>
+*{ margin:0; padding:0;}
+li{ list-style:none; width:300px; height:80px; background:#666; margin-bottom:20px;}
+#sp{ display:block; width:150px; height:400px; background-color:#26F1C8; border-radius:5px;position:absolute; top:0px; left:320px; display:none;}
+#sp p{  display:block;border:15px solid transparent; border-right-color:#26F1C8; position:absolute;top:20px; left:-30px;}
+</style>
+</head>
+
+<body>
+<div id="box"></div>
+</body>
+</html>
+<script src="../jq/jquery-1.11.3.min.js"></script>
+<script>
+	var html='';
+		html+="<ul>"
+			for(var i=0;i<50;i++){
+				html+='<li>666</li>'
+			}
+		html+="</ul>"
+		html+="<span id='sp'><p></p></span>"
+	$("#box").append(html)
+$("#box li").mouseover(function(){		//要求 在屏幕上部分以左边li上边为右盒子基线对齐  在屏幕下半部分以左边li下边线为右盒子基线对齐
+	var win_h=$(window).height();//获取窗口高度
+	var gun_h=$(window).scrollTop();//获取滚动条高度
+	var top=$(this).offset().top;//获取元素距离文档区顶部高度
+	var span_b=(top+$(this).innerHeight())-$('#sp').innerHeight();	//右盒子top为左li距文档顶部高度加上本身高度减去右span高度 即为下基线 屏幕下半屏
+	var span_p_b=$('#sp').innerHeight()-50	
+	//判断元素在屏幕上部还是下部 为 窗口高度/2 加上滚动条高度 和 元素距离文档区顶部的高度 比较 如果元素距文档顶部高度大于 他俩之和  元素就在屏幕下 反之亦然
+	if(top>(win_h/2+gun_h)){
+		$('#sp').stop().fadeIn(300,function(){
+			$('#sp').show().css({'top':span_b})
+			$('#sp p').css({'top':span_p_b})
+		})
+		console.log('下');
+	}else{
+		$('#sp').stop().fadeIn(300,function(){
+			$('#sp').show().css({'top':top})
+			$('#sp p').css({'top':20})
+		})
+		console.log('上');
+	}
+})	
+$("#box li").mouseout(function(){
+	$('#sp').stop().fadeOut(300,function(){
+		$('#sp').hide()
+	});
+})	
+
+</script>

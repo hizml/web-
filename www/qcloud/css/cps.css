@@ -1,0 +1,33 @@
+@charset "utf-8";
+/* CSS Document */
+/*banner*/
+.banner{ text-align:center; height:500px; background:#3078de;}
+/*main*/
+.main{ width:1000px; margin:0 auto;}
+.main h2{ line-height:86px; height:86px; margin-bottom:4px; font-size:36px; color:#4663b1;}
+.top-what{ padding-top:90px; height:329px; border-bottom:1px solid #dfdfdf;}
+.top-what .text{ float:left;}
+.top-what p{ line-height:25px; font-size:18px; color:#454442; width:560px; }
+.top-what img{ float:right; width:248px; height:236px;}
+.m-easy{ padding-top:90px; height:279px; border-bottom:1px solid #dfdfdf;}
+.m-easy img{ width:258px; height:186px; padding-right:172px;}
+.m-easy p{ line-height:25px; font-size:18px; color:#454442; width:570px; }
+.m-easy .text { float:right;}
+.qcloud-good{ padding-top:72px;height:417px; border-bottom:1px solid #dfdfdf;}
+.qcloud-good ul{ text-align:center; }
+.qcloud-good h3{ font-size:32px; color:#322e2d; font-weight:normal; margin-bottom:42px;}
+.qcloud-good h4{ font-size:24px; color:#686866; line-height:52px;font-weight:normal;}
+.qcloud-good li{ width:210px; margin:0 20px; float:left;}
+.qcloud-good p{ font-size:15px; color:#979ba4;line-height:25px;}
+.service{padding-top:62px; height:225px;}
+.service h3{ font-size:30px;font-weight:normal;}
+.service li{ margin-right:68px; text-align:center; float:left; margin-top:40px;}
+.service .right{margin-right:18px;}
+.service li p{ font-size:24px;}
+.bot-inner{width:1000px; margin:0 auto;}
+.bot-inner p a{ text-decoration:underline; color:#2277da;}
+.bot{ height:457px;background:#f2f2f2;}
+.bot h4{line-height:113px;padding-top:18px; font-size:30px; color:#303338;}
+.bot p{font-size:14px; color:#727c74; line-height:25px; width:915px;}
+.bot .btn{ width:280px; height:52px; background:#fa7f3b; margin: 0 auto;border-radius:3px; }
+.bot .btn a{ font-size:22px; color:#fff; line-height:52px; text-align:center; display:block;margin-top:30px; }

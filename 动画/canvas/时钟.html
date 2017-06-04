@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+
+<title>黑板-绘制射线</title>
+    <style>
+        *{margin: 0;padding: 0}
+        canvas{margin: 100px 500px}
+    </style>
+<script>
+
+window.onload=function(){
+
+   // 1 获取画布对象
+	var cvs=document.getElementById("cvs");	
+	var ctx=cvs.getContext("2d");
+	
+	
+	// 圆心坐标
+	var x0=300;
+	var y0=300;
+	
+	var r=250;
+	
+	var deg=0;
+
+	var lan;
+
+    //绘制表盘函数
+    function plate(){
+        function draw(i){
+
+            if(i%5===0){
+                lan=20;
+                ctx.strokeStyle='red';
+                ctx.lineWidth='5'
+            }else{
+                lan=15;
+                ctx.strokeStyle='black';
+                ctx.lineWidth='2'
+            }
+
+            deg=i*(Math.PI*2)/60;
+
+            ctx.beginPath();
+
+            // 起点
+            var x1=x0+(r-lan)*Math.cos(deg);
+            var y1=y0+(r-lan)*Math.sin(deg);
+            ctx.moveTo(x1,y1);
+
+            // 终点坐标
+            var x2=x0+r*Math.cos(deg);
+            var y2=y0+r*Math.sin(deg);
+            ctx.lineTo(x2,y2);
+            ctx.stroke();
+
+        }
+        for(var i=0;i<60;i++){
+            draw(i);
+        }
+
+    }
+
+    //绘制指针函数
+    function pointer(deg,lan,color,w){
+        ctx.beginPath();
+        ctx.strokeStyle=color;
+        ctx.lineWidth=w;
+        ctx.moveTo(x0,y0);
+        var x1=x0+(r-lan)*Math.cos(deg);
+        var y1=y0+(r-lan)*Math.sin(deg);
+        ctx.lineTo(x1,y1);
+        ctx.stroke();
+
+        //中心小点
+        ctx.beginPath();
+        ctx.arc(x0, y0, 5, 0,Math.PI*2);
+        ctx.fillStyle='black';
+        ctx.fill();
+
+        //圆帽
+        ctx.lineCap='round';
+    }
+
+    //表
+    function surface(){
+        var date=new Date();
+        var s=date.getSeconds();	//秒数
+        var m=date.getMinutes();	//分钟
+        var h=date.getHours();		//小时
+        if(h>12){
+            h=h%12;
+        }
+
+        //清除
+        ctx.clearRect(0,0,cvs.width,cvs.height);
+
+        //调用绘制表盘函数
+        plate();
+
+        //绘制秒针函数
+        deg=-(Math.PI/2)+s*(Math.PI/30);
+	    lan=25;
+        pointer(deg,lan,'red',2);
+
+        //绘制分针函数
+        deg=-(Math.PI/2)+(m+s/60)*(Math.PI/30);
+        lan=50;
+        pointer(deg,lan,'blue',4);
+
+        //绘制时针函数
+        deg=-(Math.PI/2)+(h+m/60+s/3600)*(Math.PI/6);
+        lan=100;
+        pointer(deg,lan,'green',6);
+    }
+
+    surface();
+    setInterval(surface,1);
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<canvas id="cvs" width="600" height="600"></canvas>
+
+</body>
+</html>

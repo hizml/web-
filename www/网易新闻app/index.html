@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>app页面</title>
+    <link rel="stylesheet" href="css/css.css">
+    <script type="text/javascript" src="js/vue.js"></script>
+    <script type="text/javascript" src="js/vue-router.js"></script>
+</head>
+<body>
+    <div id="app">
+		<topbar></topbar>
+		<div class="main">
+			<router-view></router-view>
+		</div>
+        <parapp></parapp>
+    </div>
+<!--模板区-->
+<!--topbar par-->
+	<template id='topbar'>
+		<div class="top_bar">
+			<item>
+				<i slot='icon' class="top_l_ico"></i>
+                <div slot='warp' class="warp">
+                    <ul>
+                        <li><router-link to='/' exact>问吧</router-link></li>
+                        <li><router-link to='/topic'>话题</router-link></li>
+                        <li><router-link to='/attention'>关注</router-link></li>
+                    </ul>
+                </div>
+				<i slot='icon' class="top_r_ico"></i>
+			</item>
+		</div>
+	</template>
+<!--topbar child-->	
+	<template id='item'>
+		<div>
+			<slot name='icon'></slot>
+            <slot name='warp'></slot>
+            <slot name='warpnew'></slot>
+    	</div>
+	</template>
+<!--top end-->
+    <template id="parapptem">
+        <div class="bot_nav">
+            <child class="home left width" mark='tab1' @change='getVal' :value=selected>
+                <div slot="img" class="img">
+					<i></i>
+                </div>
+                <div slot="img_ac" class="img">
+                    <i class="ac_home"></i>
+                </div>
+                <p slot="txt">首页</p>
+            </child>
+			
+            <child class="news left width" mark='tab2' @change='getVal' :value=selected>
+                <div slot="img" class="img">
+                    <i></i>
+                </div>
+                <div slot="img_ac" class="img">
+                    <i class="ac_news"></i>
+                </div>
+                <p slot="txt">要闻</p>
+            </child>
+			
+            <child class="live left width" mark='tab3' @change='getVal' :value=selected>
+                <div slot="img" class="img">
+                    <i></i>
+                </div>
+                <div slot="img_ac" class="img">
+                    <i class="ac_live"></i>
+                </div>
+                <p slot="txt">直播</p>
+            </child>
+			
+            <child class="video left width" mark='tab4' @change='getVal' :value=selected>
+                <div slot="img" class="img">
+                    <i></i>
+                </div>
+                <div slot="img_ac" class="img">
+                    <i class="ac_video"></i>
+                </div>
+                <p slot="txt">视频</p>
+            </child>
+			
+            <child class="me left width" mark='tab5' @change='getVal' :value=selected>
+                <div slot="img" class="img">
+                    <i></i>
+                </div>
+                <div slot="img_ac" class="img">
+                    <i class="ac_me"></i>
+                </div>
+                <p slot="txt">我</p>
+            </child>
+        </div>
+    </template>
+<!--父模板END-->
+<!--子模板-->
+    <template id="home">
+        <div @click='fn'>
+            <div v-show=!isActive><slot name="img"></slot></div>
+            <div v-show=isActive><slot name="img_ac"></slot></div>
+            <div :class="{eb:isActive}"><slot name="txt"></slot></div>
+        </div>
+    </template>
+<!--子模板END-->
+<!--选项卡模板-->
+    <template id="tab1">
+        <div class="tab">
+            <ul>
+                <li v-for="msg in con">
+                    <img :src="msg.src" alt="msg.txt">
+                    <p>{{ msg.txt }}</p>
+                </li>
+            </ul>
+            <div class="m-bot" :class="{sx:hisds}">
+                <p @click="updt" class="updt" >{{ up }}</p>
+
+                <div class="user">
+                    <div class="headers">
+                        <img src="images/c1.png" />
+                        <p><i>郭玉静</i>|<s>心理咨询师</s></p>
+                    </div>
+                    <div class="danners" >
+                        <img src="images/c2.jpg" />
+                        <p >我是情感心理咨询师郭玉清， 关于情感及心理的相关问题，问我吧！</p>
+                    </div>
+                    <div class="footers" >
+                        <p><a href="javascript:;">生活</a><i>|</i><s><b>4.8</b>万关注</s><i>|</i><span>1762提问</span><button type="button">+ 关注</button></p>
+                    </div>
+                </div>
+                <div class="user">
+                    <div class="headers">
+                        <img src="images/c3.png" />
+                        <p><i>郭豫斌</i>|<s>专栏作家</s></p>
+                    </div>
+                    <div class="danners" >
+                        <img src="images/c4.jpg" />
+                        <p >我是情感心理咨询师郭玉清， 关于情感及心理的相关问题，问我吧！</p>
+                    </div>
+                    <div class="footers" >
+                        <p><a href="javascript:;">生活</a><i>|</i><s><b>4.8</b>万关注</s><i>|</i><span>1762提问</span><button type="button">+ 关注</button></p>
+
+                    </div>
+                </div>
+                <div class="user">
+                    <div class="headers">
+                        <img src="images/c5.png" />
+                        <p><i>郭玉静</i>|<s>心理咨询师</s></p>
+                    </div>
+                    <div class="danners" >
+                        <img src="images/c6.jpg" />
+                        <p >我是情感心理咨询师郭玉清， 关于情感及心理的相关问题，问我吧！</p>
+                    </div>
+                    <div class="footers" >
+                        <p>
+                            <a href="javascript:;">生活</a>
+                            <i>|</i>
+                            <s><b>4.8</b>万关注</s>
+                            <i>|</i>
+                            <span>1762提问</span>
+                            <button type="button">+ 关注</button>
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+    <template id="tab2" class="tab">
+        <div class="tab">
+            <h1>234666</h1>
+        </div>
+    </template>
+    <template id="tab3" class="tab">
+        <div class="tab">
+            <h1>666423466</h1>
+        </div>
+    </template>
+</body>
+</html>
+<script>
+	Vue.component('topbar',{    //topbar
+		template:'#topbar',	
+		methods:{
+
+		},
+		components:{
+			'item':{
+				template:'#item'
+			}
+		}
+	
+	});
+
+
+    Vue.component("parapp",{
+        template:'#parapptem',
+        data:function(){
+			return {
+				selected: 'tab1'	
+			}
+        },
+        methods:{
+			getVal: function (val) {
+				this.selected = val;
+			}
+        },
+        components:{
+            'child':{
+                template:'#home',
+				props: ['mark', 'value'],
+				methods: {
+					fn: function () {
+						this.$emit('change', this.mark);
+					}
+				},
+				computed: {
+					isActive(){
+						if (this.value == this.mark) {
+							return true;
+						}
+					}
+				}
+            }
+        }
+    });
+	var Askmsg=Vue.extend({
+		template:'#tab1',
+        data: function() {
+            return {
+            con:[
+                {'src':'images/1_10.jpg','txt':'法律'},
+                {'src':'images/1_12.jpg','txt':'健康'},
+                {'src':'images/1_14.jpg','txt':'汽车'},
+                {'src':'images/1_16.jpg','txt':'财经'},
+                {'src':'images/1_18.jpg','txt':'历史'},
+                {'src':'images/1_25.jpg','txt':'时政'},
+                {'src':'images/1_26.jpg','txt':'体育'},
+                {'src':'images/1_27.jpg','txt':'军事'},
+                {'src':'images/1_28.jpg','txt':'旅游'},
+                {'src':'images/1_29.jpg','txt':'房产'},
+                {'src':'images/1_35.jpg','txt':'科技'},
+                {'src':'images/1_36.jpg','txt':'教育'},
+                {'src':'images/1_37.jpg','txt':'娱乐'},
+                {'src':'images/1_38.jpg','txt':'生活'},
+                {'src':'images/1_40.jpg','txt':'时尚'}
+            ],
+            up:'∨',
+                hisds:false
+            }
+        },
+        methods:{
+		    updt:function(){
+                this.up == "∧" ? this.up="∨": this.up="∧";
+                this.hisds = this.hisds == false ?  true  :  false;
+            }
+        }
+	});
+	var Topicmsg=Vue.extend({
+		template:'#tab2'
+	});
+	var Attentionmsg=Vue.extend({
+		template:'#tab3'
+	});
+	var routes=[
+		{path:'/', component:Askmsg},
+		{path:'/topic', component:Topicmsg},
+		{path:'/attention', component:Attentionmsg}
+	];
+	var router=new VueRouter({
+		routes:routes
+	});
+	router.push('/');           //push方法刷新时默认显示页
+	
+    var vm=new Vue({
+        el:'#app',
+        data:{
+        },
+        methods:{
+        },
+		router:new VueRouter({
+			routes:routes
+		})
+    });
+</script>

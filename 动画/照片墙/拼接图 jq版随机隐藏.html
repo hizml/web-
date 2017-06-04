@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>拼接图 照片墙</title>
+    <style>
+        /*样式预设*/
+        *{margin: 0; padding: 0}
+        li{list-style: none}
+        .box{width:980px; height:500px;margin: 80px auto;position: relative}
+        .photoWall{width: 196px; height: 100px;background: url("img/0.jpg"); position: absolute;}
+    </style>
+    <script src="../jquery-3.1.1.min.js"></script>
+    <script>
+        /*
+        * 0  1  2  3  4         1
+        * 5  6  7  8  9         2
+        * 10 11 12 13 14        3
+        * 15 16 17 18 19        4
+        * 20 21 22 23 24        5
+        *
+        * */
+        $(function(){
+//         1.   动态插入DOM元素
+            var box=$('#box');
+            for(var i=0;i<25;i++){
+                var _x=i%5;
+                var _y=parseInt(i/5);
+                console.log('x'+_x,'y'+_y);
+                $('<div class="photoWall">').css({backgroundPosition:(_x*-196)+'px '+(_y*-100)+'px','left':(_x*196)+'px','top':(_y*100)+'px'}).appendTo(box)
+            }
+//         2.   延迟隐藏
+            var wall=$('.photoWall');
+            wall.click(function(){
+                wall.each(function(index, element){
+                    var _time=Math.random()*2000+300;   // 300-2300
+                    $(this).delay(_time).animate({'opacity':'0.1'},1800)
+                });
+            });
+        })
+    </script>
+</head>
+<body>
+<div class="box" id="box"></div>
+</body>
+</html>

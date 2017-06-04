@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		
+		.slide{
+			width: 1000px;
+			height: 409px;
+			margin: 0 auto;
+			position: relative;
+		}
+		
+		.slide .pictures{
+			transform-style: preserve-3d;
+			perspective: 600px;
+		}
+		
+		.slide .pictures img{
+			
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			
+			opacity: 0;
+			transform-origin: bottom;
+		}
+		
+		.slide .nav div {
+			position: absolute;
+			width: 45px;
+			height: 45px;
+			top: 45%;
+		}
+		
+		.slide .nav .left {
+			background-image: url(img/anim/l.png);
+			left: -60px;
+		}
+		.slide .nav .right {
+			background-image: url(img/anim/r.png);
+			right: -60px;
+		}
+		.slide .pictures img:nth-child(1) {
+			transform: rotateX(0deg);
+			opacity: 1;
+		}
+		@keyframes run1 {
+			0%{transform: rotateX(0deg) ;opacity: 1;}
+			100%{transform: rotateX(-180deg);opacity: 0;}
+		}
+		@keyframes run2 {
+			0%{transform: rotateX(180deg);opacity: 0;}
+			100%{transform: rotateX(0deg);opacity:1;}
+		}
+		@keyframes run3 {
+			0%{transform: rotateX(0deg) ;opacity: 1;}
+			100%{transform: rotateX(180deg);opacity:0;}
+		}
+		@keyframes run4 {
+			0%{transform: rotateX(-180deg);opacity: 0;}
+			100%{transform: rotateX(0deg);opacity:1;}
+		}
+
+		.run1{animation: run1 1s forwards}
+		.run2{animation: run2 1s forwards}
+		.run3{animation: run3 1s forwards}
+		.run4{animation: run4 1s forwards}
+
+		</style>
+        
+		<script type="text/javascript" src="js/jquery-3.1.0.min.js" ></script>
+        
+		<script type="text/javascript">
+		
+		$(function(){
+			var page=0;
+			var long=$('.pictures').children().length;
+			$('.left').click(function(){
+				$('.pictures').children().eq(page).removeClass().addClass('run1');
+				page++;
+				if(page==long){
+					page=0;
+				}
+				$('.pictures').children().eq(page).removeClass().addClass('run2');
+				console.log(page+' left')
+			});
+
+			$('.right').click(function(){
+				$('.pictures').children().eq(page).removeClass().addClass('run3');
+				page++;
+				if(page==long){
+					page=0;
+				}
+				$('.pictures').children().eq(page).removeClass().addClass('run4');
+				console.log(page+' right')
+			});
+
+
+		})
+		
+		</script>
+        
+	</head>
+	<body>
+		<div class="slide">
+			<div class="pictures">
+				<img src="img/anim/1.jpg" />
+				<img src="img/anim/2.jpg" />
+				<img src="img/anim/3.jpg" />
+				<img src="img/anim/4.jpg" />
+				<img src="img/anim/5.jpg" />
+			</div>
+			<div class="nav">
+				<div class="left"></div>
+				<div class="right"></div>
+			</div>
+		</div>
+	</body>
+</html>

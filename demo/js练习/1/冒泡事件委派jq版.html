@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>事件委派</title>
+<style>
+*{ margin:0; padding:0;}
+#box{ width:250px; background:#999;margin-left:500px }
+button{margin-left:500px}
+p,strong,span{ display:block; width:200px; height:50px; background:#666; margin-bottom:20px; }
+</style>
+</head>
+
+<body>
+<button type="button">++++++++++++++++++++++++++++++++</button>
+<div id="box">
+	<p></p>
+	<strong></strong>
+	<p></p>
+	<strong></strong>
+	<p></p>
+	<span></span>
+	<p></p>
+	<span></span>
+	<p></p>
+	<strong></strong>
+	<p></p>
+	<strong></strong>
+	<p></p>
+	<span></span>
+	<p></p>
+	<span></span>
+	<p></p>
+	<strong></strong>
+	<p></p>
+	<strong></strong>
+	<p></p>
+	<span></span>
+	<p></p>
+	<span></span>
+	<p></p>
+	<strong></strong>
+	<p></p>
+	<strong></strong>
+	<p></p>
+	<span></span>
+	<p></p>
+	<span></span>
+	<p></p>
+	<strong></strong>
+	<p></p>
+	<strong></strong>
+	<p></p>
+	<span></span>
+	<p></p>
+	<span></span>
+</div>
+<script src="../jq/jquery-1.11.3.min.js"></script>
+<script>
+$(function(){
+/*	$("#box").click(function(ev){
+		var oEl=ev.target;
+		if(oEl.tagName=="P"){			
+			alert("pp")
+		};
+		if(oEl.tagName=="SPAN"){
+			alert("sapn");
+		};
+	});
+*/	
+	$("#box").on("click","p",function(){//点击 是p 就给他背景色
+		$(this).css("background","blue")
+	});
+})
+
+
+
+</script>
+
+
+</body>
+</html>

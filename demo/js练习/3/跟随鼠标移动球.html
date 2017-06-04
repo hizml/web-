@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+*{ margin:0; padding:0;}
+.box{ width:400px; margin:120px auto; border:1px solid #000000; padding:0px 10px 0px; position:relative;}
+.box li{ list-style:none; background-color:#0DC09C; width:350px; height:50px; margin-bottom:10px; margin-left:50px;}
+.box .ac{background:#0F70C0;}
+.box span{ display:block; width:30px; height:30px; border-radius:50%; background:#0F70C0; position:absolute; top:10px; left:15px;}
+
+</style>
+</head>
+
+<body>
+<div class="box" id="box">
+	<span></span>
+	<ul>
+		<li class="ac"></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</div>
+</body>
+</html>
+<script src="../jq/jquery-1.11.3.min.js"></script>
+<script src="../jquery_easing/js/jquery.easing.min.js"></script>
+<script>
+var onTop=$('#box .ac').position().top+10;//计算 ac距离有定位父级的top值+10美观 小球为中间
+	$('#box span').css('top',onTop);	//小球的top值为 ac距离有定位属性父级的top值 实现ac和小球位置一样
+	$('#box li').hover(function(){	//hover 鼠标进入移出事件
+			var h=$(this).position().top+10;	//鼠标所在的位置的 距离父级的top值
+			$('#box span').stop().animate({'top':h},300,'easeOutBounce');	//把鼠标所在li的top值 给小球 定义动画 先清除
+		},
+		function(){
+			$('#box span').stop().animate({'top':onTop},300,'easeOutBounce');	//离开时 小球回到有ac的li 的位置
+		});
+	$('#box li').click(function(){		//点击时
+		$(this).addClass('ac').siblings().removeClass('ac');	//点击的li有ac 其兄弟元素删除ac
+		onTop=$(this).position().top+10;		//点击的ac这个top值就赋给了小球 实现联动
+	});
+</script>

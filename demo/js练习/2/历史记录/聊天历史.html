@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+*{ margin:0; padding:0;}
+.txt{ width:400px; background:#139DB9; border-radius:8px; position:relative;padding:10px; font-family:"微软雅黑"; margin:0 auto; margin-bottom:10px;  }
+.txt h4{ font-size:16px; line-height:28px; color:#ccc; font-weight:normal; }
+.txt p{ font-size:14px; color:#272727; line-height:24px; word-break:break-all;}
+.txt time{ position:absolute; top:15px; right:10px; font-size:14px; color:#666;}
+.txt img{ position:absolute; top:5px;;right:-60px; padding:5px; border: 1px solid #999; } 
+.xtx img{ right:auto; left:-60px;}
+</style>
+</head>
+
+<body>
+<!--<div class="txt" id="txt">
+	<h4>我的发言</h4>
+	<p>六六六六六六六六六六六六六六六六六六六六六六六六六六六六六六六六六六六六六六六六六六六六六六六六六六六</p>
+	<time>2017-03-24</time>
+	<img src="a.png">
+</div>
+<div class="txt xtx">
+	<h4>他的发言</h4>
+	<p>六六六六六六六六六六六六六六六六六六六六六六六六六六六六六六六六六六六六六六六六六六六六六六六六六六六hdsalhdsalhdsalhdsalhdsalhdsalhdsalhdsalhdsalhdsalhdsalhdsalhdsalhdsalhdsalhdsalhdsalhdsalhdsalhdsalhdsalhdsalhdsalhdsalhdsalhdsalhdsalhdsalhdsalhdsalhdsal</p>
+	<time>2017-03-24</time>
+	<img src="a.png">
+</div>
+
+-->
+</body>
+</html>
+<script>
+ var wb_arr=[
+		{
+			"who":"我的发言",
+			"txt":"陆陆陆陆陆陆陆陆陆陆陆陆陆陆陆陆陆陆陆陆陆陆陆",
+			"time":"2017-03-24",
+			"pic_src":"a.png",
+			"user":true
+		},
+		{
+			"who":"ta的发言",
+			"txt":"玖玖玖玖玖玖玖玖玖玖玖玖玖玖玖玖玖玖玖玖玖玖玖",
+			"time":"2017-03-24",
+			"pic_src":"b.png",
+			"user":false
+		},
+		{
+			"who":"我的发言",
+			"txt":"陆陆陆陆陆陆陆陆陆陆陆陆陆陆陆陆陆陆陆陆陆陆陆",
+			"time":"2017-03-24",
+			"pic_src":"a.png",
+			"user":true
+		},
+		{
+			"who":"ta的发言",
+			"txt":"玖玖玖玖玖玖玖玖玖玖玖玖玖玖玖玖玖玖玖玖玖玖玖",
+			"time":"2017-03-24",
+			"pic_src":"b.png",
+			"user":false
+		},
+		{
+			"who":"我的发言",
+			"txt":"陆陆陆陆陆陆陆陆陆陆陆陆陆陆陆陆陆陆陆陆陆陆陆",
+			"time":"2017-03-24",
+			"pic_src":"a.png",
+			"user":true
+		},
+		{
+			"who":"ta的发言",
+			"txt":"玖玖玖玖玖玖玖玖玖玖玖玖玖玖玖玖玖玖玖玖玖玖玖",
+			"time":"2017-03-24",
+			"pic_src":"b.png",
+			"user":false
+		}
+	];
+var ddiv=document.createElement("div");
+	ddiv.innerHTML="";
+	var text = ""
+for(var i=0; i<wb_arr.length;i++){
+	if(wb_arr[i].user){
+		text+='<div class="txt">';
+	}else{
+		text+='<div class="txt xtx">';
+	};
+		text+='<h4>'+wb_arr[i].who+'</h4>'+
+		'<p>'+wb_arr[i].txt+'</p>'+
+		'<time>'+wb_arr[i].time+'</time>'+
+		'<img src="'+wb_arr[i].pic_src+'">'+
+		'</div>';
+
+}
+ddiv.innerHTML=text;
+
+document.body.appendChild(ddiv);
+
+
+
+
+
+
+
+
+
+</script>

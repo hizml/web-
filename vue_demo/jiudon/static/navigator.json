@@ -1,0 +1,38 @@
+{
+  "navigator": [
+    {
+      "name": "用户",
+      "path": "/user",
+      "selected": false,
+      "lose": "./assets/user.png",
+      "live": "./assets/user_a.png"
+    },
+    {
+      "name": "客服",
+      "path": "/contact",
+      "selected": false,
+      "lose": "./assets/phone.png",
+      "live": "./assets/phone_a.png"
+    },
+    {
+      "name": "首页",
+      "path": "/",
+      "selected": true,
+      "lose": "./assets/home.png",
+      "live": "./assets/home_a.png"
+    },
+    {
+      "name": "购物车",
+      "path":"/cart",
+      "selected": false,
+      "lose": "./assets/cart.png",
+      "live": "./assets/cart_a.png"
+    },{
+      "name":"目录",
+      "path":"/category",
+      "selected": false,
+      "lose": "./assets/category.png",
+      "live": "./assets/category_a.png"
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>选项卡</title>
+<style>
+*{ margin:0 auto;}
+a{ text-decoration:none;}
+li{ list-style:none;}
+.tab{ width:500px; margin-bottom:50px;}
+.option li{ float:left; border:1px solid #000000; }
+.option li a{ display:block; width:80px; height:40px; line-height:30px;}
+
+.option .active a{ background:#000000; color:#fff;}
+.content{ clear:both;}
+.content li{ width:500px; height:300px; border:1px solid #000000;}
+.con{ display:none;}
+</style>
+</head>
+
+<body>
+<div class="tab" id="tab">
+	<ul class="option">
+		<li class="active"><a href="javascript:;">选项1</a></li>
+		<li><a href="javascript:;">选项2</a></li>
+		<li><a href="javascript:;">选项3</a></li>
+		<li><a href="javascript:;">选项4</a></li>
+		<li><a href="javascript:;">选项5</a></li>
+		<li><a href="javascript:;">选项6</a></li>
+	</ul>
+	<ul class="content">
+		<li>选项内容1</li>
+		<li class="con">选项内容2</li>
+		<li class="con">选项内容3</li>
+		<li class="con">选项内容4</li>
+		<li class="con">选项内容5</li>
+		<li class="con">选项内容6</li>
+	</ul>
+</div>
+<div class="tab" id="tab2">
+	<ul class="option">
+		<li class="active"><a href="javascript:;">选项1</a></li>
+		<li><a href="javascript:;">选项2</a></li>
+		<li><a href="javascript:;">选项3</a></li>
+		<li><a href="javascript:;">选项4</a></li>
+		<li><a href="javascript:;">选项5</a></li>
+	</ul>
+	<ul class="content">
+		<li>选项内容1</li>
+		<li class="con">选项内容2</li>
+		<li class="con">选项内容3</li>
+		<li class="con">选项内容4</li>
+		<li class="con">选项内容5</li>
+	</ul>
+</div>
+</body>
+</html>
+<script>
+
+function Tab(obj){
+	this.oUlt=obj.children[0];
+	this.aLit=this.oUlt.children;
+	
+	this.oUlb=obj.children[1];
+	this.aLib=this.oUlb.children;
+	//alert(this.aLit.length)
+	this.init();
+}
+Tab.prototype.init=function(){
+	var _this=this;
+	for(var i=0;i<this.aLit.length;i++){
+		this.aLit[i].index=i;
+		this.aLit[i].onclick=function(){
+			for(var j=0;j<_this.aLit.length;j++){
+				_this.aLit[j].className="";
+				_this.aLib[j].style.display="none";
+			}
+			this.className="active";
+			_this.aLib[this.index].style.display="block";
+		}
+	}
+}
+
+
+
+
+var oTab1=document.getElementById("tab");
+var oTab2=document.getElementById("tab2");
+
+new Tab(oTab1);
+new Tab(oTab2);
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+.box{ width:300px; height:300px; background:#AD595B; margin-bottom:20px;}
+.bbb{ background:#F50307; width:500px; height:500px;}
+</style>
+</head>
+
+<body>
+<div class="box">666</div>
+<div class="box">777</div>
+<div class="box">888</div>
+<script>
+var aBox=document.getElementsByClassName("box")
+for(var i=0;i<aBox.length;i++){
+	aBox[i].onclick=function(){
+		this.className+=" bbb"
+	}
+}
+
+
+
+</script>
+</body>
+</html>

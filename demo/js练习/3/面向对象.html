@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>面向对象</title>
+</head>
+
+<body>
+</body>
+</html>
+<script>
+
+//js是基于对象的语言
+function markCat(name,age,color){
+	return{
+		name:name,
+		age:age,
+		color:color,
+		speak:function(){
+			alert('fuck')
+		}		
+	}
+}
+
+
+var Cat1=markCat('tom',18,'red');
+	Cat1.speak()	//直接调用cat1里的speak函数
+	
+//=======================================================
+
+function Cat(name,age,color){	//构造函数  就是 类
+	this.name=name;		//this指向实例化元素
+	this.age=age;
+	this.color=color;
+};
+Cat.prototype.speak=function(){	//原型
+	alert('you')
+}
+var cat6=new Cat('tom',18,'blue');	//实例化
+
+cat6.speak()
+
+alert(cat6.name)
+</script>

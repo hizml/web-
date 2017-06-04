@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+table{ border-collapse:collapse;}
+tr,td{ border:1px solid #999;}
+
+</style>
+</head>
+
+<body>
+<button type="button">---------</button>
+<script>
+
+window.onload=function(){
+	var arr=["1","2","3","4","5"]
+	var oTab=document.createElement("table");
+		for(var i=0;i<5;i++){
+			var oTr=document.createElement("tr");
+			
+				for(var x=0;x<arr.length;x++){
+					
+					var oTd=document.createElement("td");
+						
+					oTd.innerHTML=arr[x];
+						
+					oTr.appendChild(oTd);	
+					
+				}	
+					
+				
+			oTab.appendChild(oTr);
+		}
+	document.body.appendChild(oTab);
+	
+	var oBtn=document.getElementsByTagName("button")[0];
+		oBtn.onclick=function(){
+			document.body.removeChild(oTab);
+		}
+	}
+</script>
+</body>
+</html>

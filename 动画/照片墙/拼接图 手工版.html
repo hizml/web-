@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>拼接图 照片墙</title>
+    <style>
+        /*样式预设*/
+        *{margin: 0; padding: 0}
+        li{list-style: none}
+        .box{width:980px; height:500px;margin: 80px auto;}
+        li{width: 196px; height: 100px; float: left;background: url("img/0.jpg")}
+
+        /*第一排*/
+        ul:nth-child(1) li:nth-child(1){background-position: 0 0}
+        ul:nth-child(1) li:nth-child(2){background-position: -196px 0}
+        ul:nth-child(1) li:nth-child(3){background-position: -384px 0}
+        ul:nth-child(1) li:nth-child(4){background-position: -588px 0}
+        ul:nth-child(1) li:nth-child(5){background-position: -784px 0}
+
+        /*第二排*/
+        ul:nth-child(2) li:nth-child(1){background-position: 0 -100px}
+        ul:nth-child(2) li:nth-child(2){background-position: -196px -100px}
+        ul:nth-child(2) li:nth-child(3){background-position: -384px -100px}
+        ul:nth-child(2) li:nth-child(4){background-position: -588px -100px}
+        ul:nth-child(2) li:nth-child(5){background-position: -784px -100px}
+
+        /*第三排*/
+        ul:nth-child(3) li:nth-child(1){background-position: 0 -200px}
+        ul:nth-child(3) li:nth-child(2){background-position: -196px -200px}
+        ul:nth-child(3) li:nth-child(3){background-position: -384px -200px}
+        ul:nth-child(3) li:nth-child(4){background-position: -588px -200px}
+        ul:nth-child(3) li:nth-child(5){background-position: -784px -200px}
+
+        /*第四排*/
+        ul:nth-child(4) li:nth-child(1){background-position: 0  -300px}
+        ul:nth-child(4) li:nth-child(2){background-position: -196px -300px}
+        ul:nth-child(4) li:nth-child(3){background-position: -384px -300px}
+        ul:nth-child(4) li:nth-child(4){background-position: -588px -300px}
+        ul:nth-child(4) li:nth-child(5){background-position: -784px -300px}
+
+        /*第五排*/
+        ul:nth-child(5) li:nth-child(1){background-position: 0 -400px}
+        ul:nth-child(5) li:nth-child(2){background-position: -196px -400px}
+        ul:nth-child(5) li:nth-child(3){background-position: -384px -400px}
+        ul:nth-child(5) li:nth-child(4){background-position: -588px -400px}
+        ul:nth-child(5) li:nth-child(5){background-position: -784px -400px}
+    </style>
+</head>
+<body>
+<div class="box" id="box">
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+</body>
+</html>
