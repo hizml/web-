@@ -1,0 +1,57 @@
+body{background:#d8d8d8;}
+.kf-text{ width: 1198px; height: 570px;  border: 1px solid #cccccc; margin: 0 auto; background-color: #fafafa; }
+.kf-text .linkman{ float:left;}
+.kf-text .linkman .titlt{ width:220px; height:133px;background:url(../images/bg_userinfo.png) no-repeat 0 0 #e45050;}
+.kf-text .linkman .titlt .user{ width:220px; height:62px; padding-top:27px;}
+.kf-text .linkman .titlt .kf-clear{ margin:5px 10px 10px; position:relative; }
+.kf-text .linkman .titlt .kf-clear a{ width:28px; height:28px; position:absolute; display:inline-block;}
+.kf-text .linkman .titlt .kf-clear input{ width:128px; height:28px; line-height:28px; border-radius:12px; padding:0 35px; font-size:12px; color:#ccc; background:url(../images/bg_serch.png) no-repeat; }
+.kf-text .linkman .kf-user{ background:#363e47; height:437px;}
+
+
+.kf-text .connects{ margin-left: 220px;}
+.kf-text .connects .tit{ width:955px; padding:16px 11px; border-left:1px solid #cccccc;border-right:1px solid #cccccc; }
+.kf-text .connects .tit i{ display:inline-block; padding:0 2px; background-color:#fc5d60; font-size:12px; color:#fff; vertical-align:top;}
+.kf-text .connects .tit span{ padding:0 6px; font-size:16px; position:relative; display:inline-block; line-height:15px; padding-top:1px;}
+.kf-text .connects .tit span::after{ display:block; content:''; width:8px;height:8px; border-radius:50%; background-color:#70d672; position:absolute;right:-8px; top:6px;}
+.kf-text .connects .records{ float:left;}
+.kf-text .connects .records .mess{width: 603px;height: 395px; border: 1px solid #e2e2e2; border-left-color:#ccc;border-right-color:#ccc;border-top-color:#e2e2e2; background-color:#fafafa; padding:0 17px;font-size: 16px; overflow-y: auto; }
+.kf-text .connects .records .mess .l-p{ text-align: left;}  	/*系统返回内容 样式*/
+.kf-text .connects .records .mess .r-p{ text-align: right;}  /*用户输入内容 样式*/
+
+.kf-text .connects .records .mess .left{ padding: 0 12px; background: #e8e8e8; border-radius: 8px; text-align: left; line-height: 28px; display: inline-block; font-size:12px; margin-top:5px; position:relative; word-break:break-all;}/*系统返回内容 样式*/
+.kf-text .connects .records .mess .right{padding: 0 12px; border-radius: 8px; background: #D8E8F9;  text-align: right;line-height: 28px; display: inline-block; font-size:12px; word-break:break-all;margin-top:5px;position:relative; }/*用户输入内容 样式*/
+
+.kf-text .connects .records .mess .left i{display:inline-block; background: url(../images/mesBgLR2.png) no-repeat 0px -10px; width:8px ;height:15px; position:absolute; left:-8px ; top:8px;}
+.kf-text .connects .records .mess .right i{display:inline-block; background: url(../images/mes_user2.png) no-repeat -39px -10px; width:8px ;height:15px; position:absolute; right:-8px ; top:8px;}
+
+.kf-text .connects .records .mess .left .main{ color:#336699; display:inline-block; margin-left:25px; position:relative; }
+.kf-text .connects .records .mess .left .main::after{ content:"?"; background-color:#3897e7; color:#fff; border-radius:50%; display:inline-block; width:16px ;height:16px; vertical-align:middle; font-size:12px; line-height:16px ; text-align:center; font-family:simsun; position:absolute; left:-20px; top:6px;}
+.kf-text .connects .records .mess .left .list{ line-height:33px; color:#333333; padding-top:2px; font-size:12px; width:174px; display:inline-block;}
+.kf-text .connects .records .mess .time{text-align: center; color: #999; font-size: 12px; height: 35px; line-height: 35px;}
+.kf-text .connects .records .mess .me{font-size:12px; color:#ccc; line-height:21px; height:21px; text-align:right;}
+.kf-text .connects .records .mess .chat{line-height: 24px;height:24px;text-align: center; color: #999; font-size: 12px;}
+.kf-text .connects .records .mess .bject{ font-size:12px; color:#ccc; line-height:21px; height:21px;}
+
+
+.kf-text .connects .records .sendd{ border:1px solid #ccc; border-top:none; border-bottom:none;  height:123px;}        /*输入区*/
+.kf-text .connects .records .sendd .emoj{ height:32px;}
+.kf-text .connects .records .sendd .emoj a{margin: 5px 0 5px 10px;line-height: 30px;vertical-align: middle;width: 22px; height: 22px;float: left;}
+
+.kf-text .connects .records .sendd .emoj i{display: inline-block;width: 22px;height: 22px;background: url(../images/icon01.png) no-repeat;}
+.kf-text .connects .records .sendd .emoj .jietu{ float:right; width:100px; margin-top:0px; font-size:12px; color:#5ea1e8;}
+.kf-text .connects .records .sendd .emoj .jietu i{ background:#3897e7; color:#fff; border-radius:50%; display:inline-block; width:16px ;height:16px; font-size:12px; line-height:16px ; text-align:center; font-family:simsun; margin-right:5px; }
+.kf-text .connects .records .sendd .emoj .emm:hover i{ background-position:0px -30px;}
+
+
+.kf-text .connects .records .sendd .emoj .emm:hover i{ background-position:0px -30px;}
+.kf-text .connects .records .sendd .emoj .pic i{background-position:-28px 0px;}
+.kf-text .connects .records .sendd .emoj .pic:hover i{background-position:-28px -30px;}
+.kf-text .connects .records .sendd .emoj .star{ width:150px; margin-top:0px; }
+.kf-text .connects .records .sendd .emoj .star i{ background:url(../images/bg_star.png) no-repeat 2px 3px; margin-right:4px;}
+.kf-text .connects .records .sendd .emoj .star span{vertical-align: text-bottom;color: #FC5D60;}
+.kf-text .connects .records .sendd .area{width:500px; height:90px; color:#333; font-size:12px;  padding:0 10px; resize: none; background:#fafafa; display:inline-block; }
+.kf-text .connects .records .sendd .btn{ width: 90px; height: 36px; border: none; background: #f43838; color: #fff; cursor: pointer; margin: 13px;margin-top:43px;font-size: 16px;font-family: "Microsoft YaHei";vertical-align: top;display:inline-block;}
+.kf-text .connects .indent{ float:right; background:url(../images/kf-ddy_06.jpg) no-repeat; height:519px; width:339px; }
+.kf-text .connects .indent .ddlist{ display:none;}
+

@@ -1,0 +1,23 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*模态层*/
+.modal{ width:100%; height:100%; background:#000; opacity:.3; position:fixed; top:0; left:0; z-index:70}
+
+
+/*confirm弹框*/
+.confirmBox{ height:100px; width:300px; background:rgba(245,245,245,.9); border:1px solid #ccc; border-radius:5px; position:absolute; z-index:80;}
+.confirmBox p{ text-align:center; line-height:50px; height:50px;-moz-user-select:none;-webkit-user-select:none;user-select:none;}
+.confirmBox button{ width:80px; margin-right:15px; height:30px;-moz-user-select:none;-webkit-user-select:none;user-select:none;}
+
+/*prompt弹框*/
+.promptBox{ width:400px; height:160px; border:1px solid #ccc; background:#fff; position:absolute; padding:10px; z-index:80}
+.promptBox h4{ margin-bottom:10px; font-size:14px}
+.promptBox textarea{ width:100%; height:50px; padding:10px; box-sizing:border-box;}
+.promptBox p{ text-align:center; padding-top:20px}
+.promptBox p button{ height:30px; width:80px; margin:0 20px}
+
+/*alert弹框*/
+.aler{ width:200px; height:80px; background:rgba(255,255,255,0.80); border:1px solid #ccc; border-radius:5px; position:absolute; z-index:90; margin-left:-100px; margin-top:-40px;}
+.aler p{ text-align:center; line-height:40px; height:40px; font-family:"微软雅黑"; font-size:14px;}
+.aler button{ width:40px; height:25px; background-color:#ffeded; border:1px solid #c40000; text-align:center; display:block; margin:0 auto; margin-top:5px;  color:#c40000}

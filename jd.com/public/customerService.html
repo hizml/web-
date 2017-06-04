@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>京东客服</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/widget.css">
+	<link rel="stylesheet" type="text/css" href="css/customerService.css">
+	<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
+	<link rel="icon" href="favicon.ico" mce_href="//www.jd.com/favicon.ico" type="image/x-icon">
+	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="js/tools.js"></script>
+	<script type="text/javascript" src="js/widget.js"></script>
+	<script type="text/javascript" src="js/customerService.js"></script>
+	<script type="text/javascript" src="js/js.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+<div class="kf-text" id="kf-text">
+    <div class="linkman">
+    	<div class="titlt">
+        	<div class="user"><img src="images/user-u_03.jpg"></div>
+            <div class="kf-clear"><a href="#none"></a><input id="kf-clear" type="text" value="搜索最近联系人"></div>
+        </div>
+    	<div class="kf-user">
+        	<a href="index.html"><img src="images/jdkf_06.jpg"></a>
+        </div>
+    </div>
+    <div class="connects">
+    	<div class="tit"><i>官方</i><span>京东客服</span></div>
+        <div class="records">
+            <div class="mess"><div id="mess"></div></div>
+            <div class="sendd">
+            	<div class="emoj">
+                	<a class="jietu" href="#none" title="怎么发截图"><i>?</i><span>怎么发截图</span></a>
+                	<a class="emm" href="#none" title="选择表情"><i></i></a>
+                	<a class="pic" href="#none" title="贴图"><i></i></a>
+                	<a class="star" href="#none" title="满意度评价"><i></i><span>满意度评价</span></a>
+                </div>
+            	<textarea class="area" name="matter" id="area"></textarea><button type="submit" class="btn" id="btn">发送</button>
+            </div>
+            
+            
+        </div>
+        <div class="indent">
+			<div class="ddlist">
+            	<div class="mydy"><p>我的订单</p></div>
+            	<div class="cjwt"><p>常见问题</p></div>
+            </div>
+            <div class="ddcont">
+            	<div class="a1"></div>
+            	<div class="a2"></div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
