@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>波浪demo</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        @keyframes run {
+            0%{transform: translate(0, 0%)rotate(0deg);}
+            50%{transform: translate(0, -2%)rotate(180deg);}
+            100%{transform: translate(0, 0%)rotate(360deg);}
+        }
+        body{background-color: #000;}
+        .box{width: 190px;height: 190px;border: 5px solid #76DAFF;margin: 550px auto;border-radius: 50%;position: relative;background-color: #76DAFF;overflow: hidden;}
+        .box::before{content: "";width: 180px;height: 180px;border: 5px solid #fff;display: block;border-radius: 50%;position: relative;z-index: 10;}
+        .inner{width: 400px;height: 400px;background-color: #F7FDFF;border-radius: 45%;position: absolute;left: -105px;bottom: 40%;animation: run 10s linear infinite;}
+        .inner::after{content: '';width: 400px;height: 400px;background-color: rgba(255,255,255,.4);display: block; transform: translate(0,0);border-radius:46% ;animation: run 6s linear 2s infinite;}
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="inner"></div>
+    </div>
+</body>
+</html>
